@@ -1,0 +1,56 @@
+.topbar {
+    background-image: url(/imgs/topbar_background.png);
+    background-position: center;
+    background-size: cover;
+    height: 120px;
+    border-radius: 1.5rem;
+    box-shadow: 10px 10px 0 #00000030;
+    
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 32px;
+}
+
+img {
+    width: 80%;
+}
+
+div.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.4rem;
+    margin: 3rem 0;
+}
+
+a.main-bnt {
+    text-decoration: unset;
+}
+
+a.main-bnt > div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;   
+    gap: 1rem;
+
+    width: 85vw;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    box-shadow: 6px 4px 0 #00000030;
+}
+
+a.main-bnt > div:active {
+    background-color: #c79cff;
+}
+
+a.main-bnt > div > img {
+    width: 48px;
+}
+
+a.main-bnt > div > span {
+    color: white;
+    font-size: 1.8rem;
+}
