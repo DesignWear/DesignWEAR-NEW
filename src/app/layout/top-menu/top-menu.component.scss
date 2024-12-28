@@ -1,0 +1,29 @@
+.topbar {
+    background-image: url(/imgs/topbar_background.png);
+    background-position: center;
+    background-size: cover;
+    height: 120px;
+    border-radius: 1.5rem;
+    box-shadow: 10px 10px 0 #00000030;
+    
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 32px;
+}
+
+.topbar > img {
+    width: 80%;
+}
+
+.top-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .2rem;
+}
+
+.top-menu > a > img {
+    width: 3rem;
+}
