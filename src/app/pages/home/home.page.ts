@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { RouterLink } from "@angular/router";
 import { TopMenuComponent } from "../../layout/top-menu/top-menu.component";
+import SITEMAP, { Sitemap } from "../../sitemenu";
 
 @Component({
   selector: 'app-splas-page',
@@ -12,5 +13,9 @@ import { TopMenuComponent } from "../../layout/top-menu/top-menu.component";
 export class HomePage implements OnInit {
     ngOnInit(): void {
         // TODO
+    }
+
+    getSitemap(): Sitemap[] {
+      return SITEMAP;
     }
 }

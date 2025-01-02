@@ -1,22 +1,12 @@
 <div class="topbar">
     <img src="/imgs/design_wear_logo_2.png">
+    @if (showMenu()) {
+        <div class="top-menu">
+            @for (menu of getSitemap(); track menu; let i = $index) {
+                <a class="main-bnt" [routerLink]="menu.url" routerLinkActive="actived-top-menu" [routerLinkActiveOptions]="{ exact: true }">
+                    <img [src]="menu.imageUrl">
+                </a>
+            }
+        </div>
+    }
 </div>
-@if (showMenu()) {
-    <div class="top-menu">
-        <a class="main-bnt" routerLink="/creation/saias">
-            <img src="/imgs/saia_icon.png">
-        </a>
-        <a class="main-bnt" routerLink="/">
-            <img src="/imgs/base_icon.png">
-        </a>
-        <a class="main-bnt" routerLink="/">
-            <img src="/imgs/modelagem_icon.png">
-        </a>
-        <a class="main-bnt" routerLink="/">
-            <img src="/imgs/tesoura_icon.png">
-        </a>
-        <a class="main-bnt">
-            <img src="/imgs/maquina_icon.png">
-        </a>
-    </div>
-}

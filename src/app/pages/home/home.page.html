@@ -1,33 +1,11 @@
 <app-top-menu [showMenu]="false"></app-top-menu>
 <div class="container">
-    <a class="main-bnt" routerLink="/creation/saias">
-        <div>
-            <img src="/imgs/saia_icon.png">
-            <span>CRIAÇÃO</span>
-        </div>
-    </a>
-    <a class="main-bnt" routerLink="/">
-        <div>
-            <img src="/imgs/base_icon.png">
-            <span>BASE</span>
-        </div>
-    </a>
-    <a class="main-bnt" routerLink="/">
-        <div>
-            <img src="/imgs/modelagem_icon.png">
-            <span>MODELAGEM</span>
-        </div>
-    </a>
-    <a class="main-bnt" routerLink="/">
-        <div>
-            <img src="/imgs/tesoura_icon.png">
-            <span>MODELAGEM</span>
-        </div>
-    </a>
-    <a class="main-bnt" routerLink="/">
-        <div>
-            <img src="/imgs/maquina_icon.png">
-            <span>CONFECÇÃO</span>
-        </div>
-    </a>
+    @for (menu of getSitemap(); track menu; let i = $index) {
+        <a class="main-bnt" [routerLink]="menu.url">
+            <div>
+                <img [src]="menu.imageUrl">
+                <span>{{ menu.text }}</span>
+            </div>
+        </a>
+    }
 </div>
