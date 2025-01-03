@@ -1,0 +1,25 @@
+:host {
+    .gallery {
+        display: flex;
+        padding: 0.5rem;
+
+        .photo {
+            width: 100%;
+            border-right: 1px solid rgba(0, 0, 0, 0.5);
+            padding-right: 3px;
+            margin-right: 3px;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .thumbnails {
+            width: 35px;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
