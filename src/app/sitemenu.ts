@@ -26,7 +26,7 @@ const SITEMAP: Sitemap[] = [
         imageUrl: '/imgs/tesoura_icon.png',
     },
     {
-        text: 'CONFECÇÃO',
+        text: 'CONFEÇÃO',
         url: '/making',
         imageUrl: '/imgs/maquina_icon.png',
     },

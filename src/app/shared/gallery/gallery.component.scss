@@ -22,4 +22,29 @@
             }
         }
     }
+
+    .modal {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        z-index: 90;
+        width: 100vw;
+        height: 100vh;
+        background-color: white;
+        overflow: auto;
+
+        .zoom {
+            z-index: 95;
+        }
+    }
+
+
+    .close-btn {
+        position: fixed;
+        top: 12px;
+        right: 12px;
+        z-index: 100;
+        width: 32px;
+
+    }
 }
