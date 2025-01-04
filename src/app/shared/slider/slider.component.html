@@ -1,0 +1,52 @@
+@if (currentSlide) {
+    <img  id="slides" [src]="currentSlide.slideUrl">
+}
+<div id="navigate">
+    @if (_currentSlideIndex > 0) {
+        <div (touchstart)="handlePrevious()">
+            <img src="/imgs/arrow_left.png">
+        </div>
+    } @else {
+        <div></div>
+    }
+    <div id="time-line">
+        @for (slide of slides; track slide; let i = $index) {
+            @if (i < _currentSlideIndex) {
+                <div class="filled"></div>
+            } @else if (i === _currentSlideIndex) {
+                <div class="current-point">
+                    <div></div>
+                </div>
+            } @else {
+                <div class="empty"></div>
+            }
+        }
+    </div>
+    @if (_currentSlideIndex !== slides.length - 1) {
+        <div (touchstart)="handleNext()">
+            <img src="/imgs/arrow_right.png">
+        </div>
+    } @else {
+        <div></div>
+    }
+</div>
+@if (currentSlide) {
+    <div id="text">{{ currentSlide.text }}</div>
+}
+<div id="options">
+    <div (touchstart)="handlePlayAction(1)">
+        <img src="/imgs/head_phone_icon.png">
+    </div>
+    <div (touchstart)="handlePlayAction(2)">
+        <img src="/imgs/video_icon.png">
+    </div>
+    <div (touchstart)="handlePlayAction(3)">
+        <img src="/imgs/doc_icon.png">
+    </div>
+    <div (touchstart)="handlePlayAction(4)">
+        <img src="/imgs/body_icon.png">
+    </div>
+    <div (touchstart)="handlePlayAction(5)">
+        <img src="/imgs/ar_icon.png">
+    </div>
+</div>

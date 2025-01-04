@@ -10,8 +10,8 @@ export type Photo = {
     selector: 'app-gallery-component',
     templateUrl: './gallery.component.html',
     styleUrl: './gallery.component.scss',
-    standalone: true,
     imports: [],
+    standalone: true,
 })
 export class GalleryComponente implements OnInit {
     currentPhoto?: Photo;
