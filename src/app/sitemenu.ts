@@ -30,6 +30,11 @@ const SITEMAP: Sitemap[] = [
         url: '/making',
         imageUrl: '/imgs/maquina_icon.png',
     },
+    {
+        text: 'TESTE',
+        url: '/making',
+        imageUrl: '/imgs/maquina_icon.png',
+    },
 ];
 
 export default SITEMAP;
