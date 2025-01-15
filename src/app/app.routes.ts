@@ -11,23 +11,32 @@ import { BasePage } from './pages/base/base.page';
 import { ModelingPage } from './pages/modeling/modeling.page';
 import { CuttingPage } from './pages/cutting/cutting.page';
 import { MakingPage } from './pages/making/making.page';
+import { AppLayoutComponent } from './layout/app-layout-component/app-layout.component';
 
 export const routes: Routes = [
     { path: '', component: SplashPage },
-    { path: 'home', component: HomePage },
     {
-        path: 'creation',
-        component: CreationPage,
+        path: 'app',
+        component: AppLayoutComponent,
         children: [
-            { path: 'saias', component: SaiasPage },
-            { path: 'saia-1', component: Saia1Page },
-            { path: 'saia-2', component: Saia2Page },
-            { path: 'saia-3', component: Saia3Page },
-            { path: 'saia-4', component: Saia4Page },
+            { path: 'home', component: HomePage },
+            {
+                path: 'creation',
+                component: CreationPage,
+                children: [
+                    { path: 'saias', component: SaiasPage },
+                    { path: 'saia-1', component: Saia1Page },
+                    { path: 'saia-2', component: Saia2Page },
+                    { path: 'saia-3', component: Saia3Page },
+                    { path: 'saia-4', component: Saia4Page },
+                    { path: '', redirectTo: 'saias', pathMatch: 'full' },
+                ],
+            },
+            { path: 'base', component: BasePage },
+            { path: 'modeling', component: ModelingPage },
+            { path: 'cutting', component: CuttingPage },
+            { path: 'making', component: MakingPage },
         ],
     },
-    { path: 'base', component: BasePage },
-    { path: 'modeling', component: ModelingPage },
-    { path: 'cutting', component: CuttingPage },
-    { path: 'making', component: MakingPage },
+    { path: '**', redirectTo: 'app/home' },
 ];

@@ -15,7 +15,7 @@ export class SplashPage implements OnInit {
 
   ngOnInit(): void {
     setTimeout(() => {
-      this.route.navigate(['/home']);
+      this.route.navigate(['/app/home']);
     }, 3000);
   }
 }

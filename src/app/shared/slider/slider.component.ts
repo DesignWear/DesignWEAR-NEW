@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 
 export enum ActionType {
     PlayAudio = 1,
@@ -23,7 +23,7 @@ export type Slide = {
     imports: [],
     standalone: true,
 })
-export class SliderComponent implements OnInit {
+export class SliderComponent {
     _currentSlideIndex: number = 0;
     
     get currentSlide(): Slide {
@@ -163,9 +163,6 @@ export class SliderComponent implements OnInit {
     currentAction?: ActionType | null;
 
     showAudioPlayer: boolean = false;
-
-    ngOnInit(): void {
-    }
 
     handlePrevious(): void {
         if (this._currentSlideIndex > 0) {

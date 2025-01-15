@@ -1,16 +1,10 @@
-import { Component, input, OnInit } from "@angular/core";
-import { TopMenuComponent } from "../../layout/top-menu/top-menu.component";
-import { RouterLink } from "@angular/router";
+import { Component } from "@angular/core";
 
 @Component({
     selector: 'app-making-page',
     templateUrl: './making.page.html',
     styleUrl: './making.page.scss',
-    imports: [RouterLink, TopMenuComponent],
+    imports: [],
     standalone: true,
 })
-export class MakingPage implements OnInit {
-    ngOnInit(): void {
-        // TODO
-    }
-}
+export class MakingPage { }

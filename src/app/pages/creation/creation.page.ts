@@ -1,16 +1,11 @@
-import { Component, OnInit } from "@angular/core";
-import { RouterLink, RouterOutlet } from "@angular/router";
-import { TopMenuComponent } from "../../layout/top-menu/top-menu.component";
+import { Component } from "@angular/core";
+import { RouterOutlet } from "@angular/router";
 
 @Component({
     selector: 'app-creation-page',
     templateUrl: './creation.page.html',
     styleUrl: './creation.page.scss',
-    imports: [RouterOutlet, RouterLink, TopMenuComponent],
+    imports: [RouterOutlet],
     standalone: true,
 })
-export class CreationPage implements OnInit {
-    ngOnInit(): void {
-        // TODO
-    }
-}
+export class CreationPage { }

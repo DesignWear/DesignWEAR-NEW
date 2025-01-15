@@ -1,9 +1,9 @@
 <div class="topbar">
     <img src="/imgs/design_wear_logo_2.png">
-    @if (showMenu()) {
+    @if (showMenu) {
         <div class="top-menu">
             @for (menu of getSitemap(); track menu; let i = $index) {
-                <a class="main-bnt" [routerLink]="menu.url" routerLinkActive="actived-top-menu" [routerLinkActiveOptions]="{ exact: true }">
+                <a class="main-bnt" [routerLink]="menu.url" routerLinkActive="actived-top-menu">
                     <img [src]="menu.imageUrl">
                 </a>
             }

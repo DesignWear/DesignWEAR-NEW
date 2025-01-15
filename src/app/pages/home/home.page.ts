@@ -1,6 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { RouterLink } from "@angular/router";
-import { TopMenuComponent } from "../../layout/top-menu/top-menu.component";
 import SITEMAP, { Sitemap } from "../../sitemenu";
 
 @Component({
@@ -8,13 +7,9 @@ import SITEMAP, { Sitemap } from "../../sitemenu";
   templateUrl: './home.page.html',
   styleUrl: './home.page.css',
   standalone: true,
-  imports: [RouterLink, TopMenuComponent],
+  imports: [RouterLink],
 })
-export class HomePage implements OnInit {
-    ngOnInit(): void {
-        // TODO
-    }
-
+export class HomePage {
     getSitemap(): Sitemap[] {
       return SITEMAP;
     }

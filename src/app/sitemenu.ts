@@ -7,27 +7,27 @@ export type Sitemap = {
 const SITEMAP: Sitemap[] = [
     {
         text: 'CRIAÇÃO',
-        url: '/creation/saias',
+        url: '/app/creation/saias',
         imageUrl: '/imgs/saia_icon.png',
     },
     {
         text: 'BASE',
-        url: '/base',
+        url: '/app/base',
         imageUrl: '/imgs/base_icon.png',
     },
     {
         text: 'MODELAGEM',
-        url: '/modeling',
+        url: '/app/modeling',
         imageUrl: '/imgs/modelagem_icon.png',
     },
     {
         text: 'CORTE',
-        url: '/cutting',
+        url: '/app/cutting',
         imageUrl: '/imgs/tesoura_icon.png',
     },
     {
         text: 'CONFEÇÃO',
-        url: '/making',
+        url: '/app/making',
         imageUrl: '/imgs/maquina_icon.png',
     },
 ];

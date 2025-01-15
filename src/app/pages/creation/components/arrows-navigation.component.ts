@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 @Component({
     selector: 'app-arrows-navigation',
@@ -39,11 +39,7 @@ import { Component, Input, OnInit } from "@angular/core";
     imports: [],
     standalone: true,
 })
-export class ArrowsNavigationComponent implements OnInit {
+export class ArrowsNavigationComponent {
     @Input() leftUrl?: string | null;
     @Input() rightUrl?: string | null;
-
-    ngOnInit(): void {
-        // TODO
-    }
 }

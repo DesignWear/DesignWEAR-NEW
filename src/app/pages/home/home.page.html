@@ -1,4 +1,3 @@
-<app-top-menu [showMenu]="false"></app-top-menu>
 <div class="container">
     @for (menu of getSitemap(); track menu; let i = $index) {
         <a class="main-bnt" [routerLink]="menu.url">

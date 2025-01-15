@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { GalleryComponente, Photo } from "../../../shared/gallery/gallery.component";
 import { ArrowsNavigationComponent } from "../components/arrows-navigation.component";
 
@@ -9,7 +9,7 @@ import { ArrowsNavigationComponent } from "../components/arrows-navigation.compo
     imports: [GalleryComponente, ArrowsNavigationComponent],
     standalone: true,
 })
-export class Saia3Page implements OnInit {
+export class Saia3Page {
     photos: Photo[] = [
         {
             id: 1,
@@ -42,8 +42,4 @@ export class Saia3Page implements OnInit {
             thumbnailUrl: '/imgs/gallery/photo_3_thumbnail.png',
         },
     ];
-    
-    ngOnInit(): void {
-        // TODO
-    }
 }
