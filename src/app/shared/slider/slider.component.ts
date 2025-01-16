@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { ComparatorArComponent } from "../comparator-ar/comparator-ar.component";
 
 export enum ActionType {
     PlayAudio = 1,
@@ -20,7 +21,7 @@ export type Slide = {
     selector: 'app-slider-component',
     templateUrl: './slider.component.html',
     styleUrl: './slider.component.scss',
-    imports: [],
+    imports: [ComparatorArComponent],
     standalone: true,
 })
 export class SliderComponent {
