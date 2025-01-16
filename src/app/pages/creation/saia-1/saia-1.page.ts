@@ -13,33 +13,28 @@ export class Saia1Page {
     photos: Photo[] = [
         {
             id: 1,
-            photoUrl: '/imgs/gallery/photo_1.png',
-            thumbnailUrl: '/imgs/gallery/photo_1_thumbnail.png',
+            photoUrl: '/imgs/saias/1/photo1.jpg',
+            thumbnailUrl: '/imgs/saias/1/photo1_thumbnail.png',
         },
         {
             id: 2,
-            photoUrl: '/imgs/gallery/photo_2.png',
-            thumbnailUrl: '/imgs/gallery/photo_2_thumbnail.png',
+            photoUrl: '/imgs/saias/1/photo2.jpg',
+            thumbnailUrl: '/imgs/saias/1/photo2_thumbnail.png',
         },
         {
             id: 3,
-            photoUrl: '/imgs/gallery/photo_3.png',
-            thumbnailUrl: '/imgs/gallery/photo_3_thumbnail.png',
+            photoUrl: '/imgs/saias/1/photo3.jpg',
+            thumbnailUrl: '/imgs/saias/1/photo3_thumbnail.png',
         },
         {
             id: 4,
-            photoUrl: '/imgs/gallery/photo_1.png',
-            thumbnailUrl: '/imgs/gallery/photo_1_thumbnail.png',
+            photoUrl: '/imgs/saias/1/photo4.jpg',
+            thumbnailUrl: '/imgs/saias/1/photo4_thumbnail.png',
         },
         {
             id: 5,
-            photoUrl: '/imgs/gallery/photo_2.png',
-            thumbnailUrl: '/imgs/gallery/photo_2_thumbnail.png',
-        },
-        {
-            id: 6,
-            photoUrl: '/imgs/gallery/photo_3.png',
-            thumbnailUrl: '/imgs/gallery/photo_3_thumbnail.png',
+            photoUrl: '/imgs/saias/1/photo5.jpg',
+            thumbnailUrl: '/imgs/saias/1/photo5_thumbnail.png',
         },
     ];
 }
