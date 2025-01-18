@@ -4,7 +4,7 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from "@angular/core";
     selector: 'app-comparator-ar-component',
     template: `
     <div class="container">
-        <img #img [src]="slideUrl">
+        <img [src]="slideUrl">
         <video #video autoplay playsinline></video>
     </div>
     @if (hasMultipleCameras) {
@@ -22,7 +22,7 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from "@angular/core";
     }
     img {
         position: absolute;
-        width: 90vw;
+        width: 95vw;
     }
     video {
         width: 100vw;
@@ -32,6 +32,9 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from "@angular/core";
         display: flex;
         justify-content: center;
     }
+    .change-camera-btn > img {
+        width: 3rem;
+    }
     `,
     imports: [],
     standalone: true,
@@ -39,7 +42,6 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from "@angular/core";
 export class ComparatorArComponent implements OnInit {
     @Input() slideUrl: string = '/imgs/slides/18/passo18.svg';
     @ViewChild('video', { static: true }) videoElement!: ElementRef<HTMLVideoElement>;
-    @ViewChild('img') imgElement!: ElementRef<HTMLImageElement>;
 
     private currentStream: MediaStream | null = null;
     private currentDeviceId: string | null = null;
@@ -67,17 +69,6 @@ export class ComparatorArComponent implements OnInit {
     }
 
     private async startCamera(deviceId?: string): Promise<void> {
-
-        setTimeout(() => {
-            const { clientWidth, clientHeight } = this.videoElement.nativeElement;
-            console.log(`clientWidth: ${clientWidth}, clientHeight: ${clientHeight}`);
-    
-            if (clientHeight < clientWidth) {
-                this.imgElement.nativeElement.style.height = `${clientHeight}px`;
-            }
-            
-        }, 500);
-
         if (this.currentStream) {
             this.currentStream.getTracks().forEach(track => track.stop());
         }
