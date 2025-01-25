@@ -1,0 +1,47 @@
+<div class="head-title">2º - DEFINIR A SAIA</div>
+<img [src]="frankenstein">
+
+<div class="container">
+    <div style="width: 10px;"></div>
+    <div>
+        <div class="select">
+            <div class="title">COMPRIMENTO</div>
+            <select id="1" [(ngModel)]="comprimentoId">
+                <option value="0" disabled selected>selecione</option>
+                <option value="1">Curta</option>
+                <option value="2">Média</option>
+                <option value="3">Longa</option>
+            </select>
+        </div>
+        <div class="select">
+            <div class="title">PINÇA</div>
+            <select id="2" [(ngModel)]="pincaId">
+                <option value="0" disabled selected>selecione</option>
+                <option value="1">Sem pinça</option>
+                <option value="2">Com pinça</option>
+                <option value="3">Com recorte</option>
+            </select>
+        </div>
+    </div>
+    <div style="width: 10px;"></div>
+    <div>
+        <div class="select">
+            <div class="title">AMPLITUDE</div>
+            <select id="3" [(ngModel)]="amplitudeId">
+                <option value="0" disabled selected>selecione</option>
+                <option value="1">Menos ampla</option>
+                <option value="2">mais ampla</option>
+            </select>
+        </div>
+        <div class="select">
+            <div class="title">CINTA</div>
+            <select id="4" [(ngModel)]="cintaId">
+                <option value="0" disabled selected>selecione</option>
+                <option value="1">com cinta</option>
+                <option value="2">Limpeza interna</option>
+            </select>
+        </div>
+    </div>
+    <div style="width: 10px;"></div>
+</div>
+<app-arrows-navigation leftUrl="/app/creation/saia-4"></app-arrows-navigation>

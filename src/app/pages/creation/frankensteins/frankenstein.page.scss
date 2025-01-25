@@ -1,0 +1,37 @@
+img {
+    width: 85%;
+    margin: 0 auto 18px auto;
+    display: block;
+}
+
+div.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    div {
+        width: 100%;
+    }
+}
+
+div.select {
+    // width: 100%;
+    // margin: 8px;
+
+    .title {
+        font-size: 16px;
+        font-weight: bolder;
+        color: var(--primary-color);
+        text-align: center;
+        margin: 0.5rem 0;
+    }
+
+    select {
+        width: 100%;
+        font-size: 18px;
+        padding: 6px;
+        border-radius: 19px;
+        background: linear-gradient(white, white) padding-box, linear-gradient(to right, rgb(255, 0, 128), rgb(0, 4, 255)) border-box;
+        border: 2px solid transparent;
+    }
+}

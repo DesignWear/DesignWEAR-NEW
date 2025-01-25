@@ -33,6 +33,7 @@ export class GalleryComponente implements OnInit {
         const img = nativeElement.children[0];
         setTimeout(() => {
             nativeElement.scroll({ left: (img as HTMLImageElement).naturalWidth / 3 });
+            nativeElement.scroll({ top: (img as HTMLImageElement).naturalHeight / 3 });
         }, 0);
     }
 

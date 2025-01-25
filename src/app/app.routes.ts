@@ -12,6 +12,7 @@ import { ModelingPage } from './pages/modeling/modeling.page';
 import { CuttingPage } from './pages/cutting/cutting.page';
 import { MakingPage } from './pages/making/making.page';
 import { AppLayoutComponent } from './layout/app-layout-component/app-layout.component';
+import { FrankensteinsPage } from './pages/creation/frankensteins/frankenstein.page';
 
 export const routes: Routes = [
     { path: '', component: SplashPage },
@@ -29,6 +30,7 @@ export const routes: Routes = [
                     { path: 'saia-2', component: Saia2Page },
                     { path: 'saia-3', component: Saia3Page },
                     { path: 'saia-4', component: Saia4Page },
+                    { path: 'frankensteins', component: FrankensteinsPage },
                     { path: '', redirectTo: 'saias', pathMatch: 'full' },
                 ],
             },
