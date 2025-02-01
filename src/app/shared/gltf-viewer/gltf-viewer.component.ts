@@ -58,7 +58,7 @@ export class GltfViewerComponent implements AfterViewInit, OnDestroy {
 
   private initScene(): void {
     this.scene = new THREE.Scene();
-    this.scene.background = new THREE.Color(0xffc0f2);
+    this.scene.background = new THREE.Color(0xffffff);
     this.camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
     this.camera.position.set(0, 1, 3);
 
@@ -71,8 +71,7 @@ export class GltfViewerComponent implements AfterViewInit, OnDestroy {
 
     this.loader = new GLTFLoader();
 
-    const light = new THREE.AmbientLight(0xffffff, 1);
-    this.scene.add(light);
+    this.scene.add(new THREE.AmbientLight(0xffffff, 1));
   }
 
   private loadModel(): void {
