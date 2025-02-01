@@ -51,12 +51,19 @@
             <img src="/imgs/doc_icon.png">
         </div>
     }
-    <div (click)="handlePlayAction(4)">
-        <img src="/imgs/body_icon.png">
-    </div>
+    @if (currentSlide.model3dUrl) {
+        <div (click)="handlePlayAction(4)">
+            <img src="/imgs/3d_icon.png">
+        </div>
+    }
     @if (currentSlide.slideUrl) {
         <div (click)="handlePlayAction(5)">
             <img src="/imgs/ar_icon.png">
+        </div>
+    }
+    @if (currentSlide.imageUrl) {
+        <div (click)="handlePlayAction(6)">
+            <img src="/imgs/body_icon.png">
         </div>
     }
 </div>
@@ -68,11 +75,11 @@
                 <source [src]="currentSlide.videoUrl" type="video/mp4">
              </video>
         } @else if (currentAction === 4) {
-            <div class="audio">
-                Modelo 3D
-            </div>
+            <app-gltf-viewer [modelPath]="currentSlide.model3dUrl!"/>
         } @else if (currentAction === 5) {
             <app-comparator-ar-component [slideUrl]="currentSlide.slideUrl"></app-comparator-ar-component>
+        } @else if (currentAction === 6) {
+            <img [src]="currentSlide.imageUrl">
         }
         <div class="close-btn" (click)="handleCloseModal($event)">
             <svg viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">

@@ -1,12 +1,14 @@
 import { Component } from "@angular/core";
 import { ComparatorArComponent } from "../comparator-ar/comparator-ar.component";
+import { GltfViewerComponent } from "../gltf-viewer/gltf-viewer.component";
 
 export enum ActionType {
     PlayAudio = 1,
     PlayVideo = 2,
     DownloadDoc = 3,
-    Display3dModel = 4,
+    DisplayModel3d = 4,
     DisplayAugmentedReality = 5,
+    DisplayImagem = 6,
 }
 
 export type Slide = {
@@ -15,13 +17,15 @@ export type Slide = {
     audioUrl?: string | undefined;
     videoUrl?: string | undefined;
     pdfUrl?: string | undefined;
+    model3dUrl?: string | undefined;
+    imageUrl?: string | undefined;
 }
 
 @Component({
     selector: 'app-slider-component',
     templateUrl: './slider.component.html',
     styleUrl: './slider.component.scss',
-    imports: [ComparatorArComponent],
+    imports: [ComparatorArComponent, GltfViewerComponent],
     standalone: true,
 })
 export class SliderComponent {
@@ -66,6 +70,7 @@ export class SliderComponent {
             audioUrl: '/imgs/slides/5/passo5.ogg',
             videoUrl: '/imgs/slides/5/video5.mp4',
             pdfUrl: '/imgs/slides/base.pdf',
+            imageUrl: '/imgs/slides/5/image5.png'
         },
         {
             slideUrl: '/imgs/slides/6/passo6.svg',
@@ -129,6 +134,7 @@ export class SliderComponent {
             audioUrl: '/imgs/slides/14/passo14.ogg',
             videoUrl: '/imgs/slides/14/video14mp4',
             pdfUrl: '/imgs/slides/base.pdf',
+            imageUrl: '/imgs/slides/14/image14.png'
         },
         {
             slideUrl: '/imgs/slides/15/passo15.svg',
@@ -157,6 +163,7 @@ export class SliderComponent {
             audioUrl: '/imgs/slides/18/passo18.ogg',
             videoUrl: '/imgs/slides/18/video18.mp4',
             pdfUrl: '/imgs/slides/base.pdf',
+            model3dUrl: '/imgs/slides/18/model3d18.glb',
         },
     ];
 
@@ -185,8 +192,9 @@ export class SliderComponent {
         }
         
         if (action === ActionType.PlayVideo
-            || action === ActionType.Display3dModel
-            || action === ActionType.DisplayAugmentedReality) {
+            || action === ActionType.DisplayModel3d
+            || action === ActionType.DisplayAugmentedReality
+            || action === ActionType.DisplayImagem) {
             this.currentAction = action;
             this.showModal = true;
         }
