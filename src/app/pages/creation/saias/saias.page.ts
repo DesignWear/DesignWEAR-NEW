@@ -5,7 +5,7 @@ import { RouterLink } from "@angular/router";
     selector: 'app-saias-page',
     templateUrl: './saias.page.html',
     styleUrl: './saias.page.scss',
-    standalone: true,
     imports: [RouterLink],
+    standalone: true,
 })
 export class SaiasPage { }

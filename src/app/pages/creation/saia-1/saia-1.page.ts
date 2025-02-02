@@ -6,8 +6,8 @@ import { ArrowsNavigationComponent } from "../components/arrows-navigation.compo
     selector: 'app-saia-1-page',
     templateUrl: './saia-1.page.html',
     styleUrl: './saia-1.page.scss',
-    standalone: true,
     imports: [GalleryComponente, ArrowsNavigationComponent],
+    standalone: true,
 })
 export class Saia1Page {
     photos: Photo[] = [

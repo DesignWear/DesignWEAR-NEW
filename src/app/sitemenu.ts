@@ -7,7 +7,7 @@ export type Sitemap = {
 const SITEMAP: Sitemap[] = [
     {
         text: 'CRIAÇÃO',
-        url: '/app/creation/saias',
+        url: '/app/creation',
         imageUrl: '/imgs/saia_icon.png',
     },
     {

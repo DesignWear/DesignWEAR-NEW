@@ -1,0 +1,25 @@
+.sub-title {
+    font-size: small;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin: 6px;
+}
+
+a.modeling-btn {
+    display: flex;
+    align-items: center;
+    
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 4px;
+    margin: 12px;
+    box-shadow: 3px 4px 0 #e5e5e5;
+    text-decoration: unset;
+    
+    img {
+        width: 45px;
+    }
+    div {
+        color: var(--primary-color);
+    }
+}

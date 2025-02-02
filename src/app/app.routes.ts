@@ -13,6 +13,11 @@ import { CuttingPage } from './pages/cutting/cutting.page';
 import { MakingPage } from './pages/making/making.page';
 import { AppLayoutComponent } from './layout/app-layout-component/app-layout.component';
 import { FrankensteinsPage } from './pages/creation/frankensteins/frankenstein.page';
+import { ModelingMenuPage } from './pages/modeling/modeling-menu/modeling-menu.page';
+import { ModelingAcabamentoPage } from './pages/modeling/modeling-acabamento/modeling-acabamento.page';
+import { ModelingAmplitudePage } from './pages/modeling/modeling-amplitude/modeling-amplitude.page';
+import { ModelingComprimentoPage } from './pages/modeling/modeling-comprimento/modeling-comprimento.page';
+import { ModelingPincaPage } from './pages/modeling/modeling-pinca/modeling-pinca.page';
 
 export const routes: Routes = [
     { path: '', component: SplashPage },
@@ -35,7 +40,18 @@ export const routes: Routes = [
                 ],
             },
             { path: 'base', component: BasePage },
-            { path: 'modeling', component: ModelingPage },
+            {
+                path: 'modeling',
+                component: ModelingPage,
+                children: [
+                    { path: 'menu', component: ModelingMenuPage },
+                    { path: 'acabamento', component: ModelingAcabamentoPage },
+                    { path: 'amplitude', component: ModelingAmplitudePage },
+                    { path: 'comprimento', component: ModelingComprimentoPage },
+                    { path: 'pinca', component: ModelingPincaPage },
+                    { path: '', redirectTo: 'menu', pathMatch: 'full' },
+                ],
+            },
             { path: 'cutting', component: CuttingPage },
             { path: 'making', component: MakingPage },
         ],

@@ -1,4 +1,4 @@
-import { Component, Input, input, OnInit } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { NavigationEnd, Router, RouterLink, RouterLinkActive } from "@angular/router";
 import SITEMAP, { Sitemap } from "../../sitemenu";
 
@@ -9,7 +9,7 @@ import SITEMAP, { Sitemap } from "../../sitemenu";
     standalone: true,
     imports: [RouterLink, RouterLinkActive],
 })
-export class TopMenuComponent implements OnInit {
+export class TopMenuComponent {
     @Input() showMenu: boolean = true;
 
     constructor(
@@ -24,10 +24,6 @@ export class TopMenuComponent implements OnInit {
                 }
             } 
         });
-    }
-
-    ngOnInit(): void {
-        // TODO
     }
 
     getSitemap(): Sitemap[] {

@@ -1,18 +1,19 @@
 import { Component, Input } from "@angular/core";
+import { RouterLink } from "@angular/router";
 
 @Component({
     selector: 'app-arrows-navigation',
     template: `
     <div class="arrows-navigation">
         @if (leftUrl) {
-            <a [href]="leftUrl">
+            <a [routerLink]="leftUrl">
                 <img src="/imgs/arrow_left.png">
             </a>
         } @else {
             <span></span>
         }
         @if (rightUrl) {
-            <a [href]="rightUrl">
+            <a [routerLink]="rightUrl">
                 <img src="/imgs/arrow_right.png">
             </a>
         } @else {
@@ -36,7 +37,7 @@ import { Component, Input } from "@angular/core";
         }
     }
     `,
-    imports: [],
+    imports: [RouterLink],
     standalone: true,
 })
 export class ArrowsNavigationComponent {
