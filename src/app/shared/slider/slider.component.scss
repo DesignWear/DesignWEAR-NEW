@@ -60,26 +60,26 @@
         }
     }
 
-    .modal {
-        position: fixed;
-        top: 0px;
-        left: 0px;
-        width: 100vw;
-        height: 100vh;
-        background-color: white;
+    // .modal {
+    //     position: fixed;
+    //     top: 0px;
+    //     left: 0px;
+    //     width: 100vw;
+    //     height: 100vh;
+    //     background-color: white;
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    // }
 
-    .close-btn {
-        position: fixed;
-        top: 12px;
-        right: 12px;
-        z-index: 100;
-        width: 32px;
-    }
+    // .close-btn {
+    //     position: fixed;
+    //     top: 12px;
+    //     right: 12px;
+    //     z-index: 100;
+    //     width: 32px;
+    // }
 
     .audioPlayer {
         audio {

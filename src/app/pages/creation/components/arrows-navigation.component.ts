@@ -10,14 +10,19 @@ import { RouterLink } from "@angular/router";
                 <img src="/imgs/arrow_left.png">
             </a>
         } @else {
-            <span></span>
+             <a>
+                 <img src="/imgs/arrow_left.png" style="filter: grayscale(100%);">
+             </a>
         }
+        <ng-content></ng-content>
         @if (rightUrl) {
             <a [routerLink]="rightUrl">
                 <img src="/imgs/arrow_right.png">
             </a>
         } @else {
-            <span></span>
+            <a>
+                <img src="/imgs/arrow_right.png" style="filter: grayscale(100%);">
+            </a>
         }
     </div>
     `,

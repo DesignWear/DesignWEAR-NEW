@@ -17,7 +17,7 @@ import { ModelingMenuPage } from './pages/modeling/modeling-menu/modeling-menu.p
 import { ModelingAcabamentoPage } from './pages/modeling/modeling-acabamento/modeling-acabamento.page';
 import { ModelingAmplitudePage } from './pages/modeling/modeling-amplitude/modeling-amplitude.page';
 import { ModelingComprimentoPage } from './pages/modeling/modeling-comprimento/modeling-comprimento.page';
-import { ModelingPincaPage } from './pages/modeling/modeling-pinca/modeling-pinca.page';
+import { ModelingRecortePage } from './pages/modeling/modeling-recorte/modeling-recorte.page';
 
 export const routes: Routes = [
     { path: '', component: SplashPage },
@@ -45,10 +45,10 @@ export const routes: Routes = [
                 component: ModelingPage,
                 children: [
                     { path: 'menu', component: ModelingMenuPage },
-                    { path: 'acabamento', component: ModelingAcabamentoPage },
-                    { path: 'amplitude', component: ModelingAmplitudePage },
                     { path: 'comprimento', component: ModelingComprimentoPage },
-                    { path: 'pinca', component: ModelingPincaPage },
+                    { path: 'recorte', component: ModelingRecortePage },
+                    { path: 'amplitude', component: ModelingAmplitudePage },
+                    { path: 'acabamento', component: ModelingAcabamentoPage },
                     { path: '', redirectTo: 'menu', pathMatch: 'full' },
                 ],
             },
