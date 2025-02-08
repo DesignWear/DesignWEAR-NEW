@@ -14,10 +14,13 @@ import { MakingPage } from './pages/making/making.page';
 import { AppLayoutComponent } from './layout/app-layout-component/app-layout.component';
 import { FrankensteinsPage } from './pages/creation/frankensteins/frankenstein.page';
 import { ModelingMenuPage } from './pages/modeling/modeling-menu/modeling-menu.page';
-import { ModelingAcabamentoPage } from './pages/modeling/modeling-acabamento/modeling-acabamento.page';
-import { ModelingAmplitudePage } from './pages/modeling/modeling-amplitude/modeling-amplitude.page';
+import { ModelingAcabamento1Page } from './pages/modeling/modeling-acabamento-1/modeling-acabamento-1.page';
+import { ModelingAmplitude1Page } from './pages/modeling/modeling-amplitude-1/modeling-amplitude-1.page';
 import { ModelingComprimentoPage } from './pages/modeling/modeling-comprimento/modeling-comprimento.page';
 import { ModelingRecortePage } from './pages/modeling/modeling-recorte/modeling-recorte.page';
+import { ModelingMoldesPage } from './pages/modeling/modeling-models/modeling-moldes.page';
+import { ModelingAmplitude2Page } from './pages/modeling/modeling-amplitude-2/modeling-amplitude-2.page';
+import { ModelingAcabamento2Page } from './pages/modeling/modeling-acabamento-2/modeling-acabamento-2.page';
 
 export const routes: Routes = [
     { path: '', component: SplashPage },
@@ -47,8 +50,11 @@ export const routes: Routes = [
                     { path: 'menu', component: ModelingMenuPage },
                     { path: 'comprimento', component: ModelingComprimentoPage },
                     { path: 'recorte', component: ModelingRecortePage },
-                    { path: 'amplitude', component: ModelingAmplitudePage },
-                    { path: 'acabamento', component: ModelingAcabamentoPage },
+                    { path: 'amplitude-1', component: ModelingAmplitude1Page },
+                    { path: 'amplitude-2', component: ModelingAmplitude2Page },
+                    { path: 'acabamento-1', component: ModelingAcabamento1Page },
+                    { path: 'acabamento-2', component: ModelingAcabamento2Page },
+                    { path: 'moldes', component: ModelingMoldesPage },
                     { path: '', redirectTo: 'menu', pathMatch: 'full' },
                 ],
             },

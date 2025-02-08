@@ -1,0 +1,33 @@
+<div class="head-title">3º - ALTERAR A BASE</div>
+
+<div style="display: flex;justify-content: center;">
+    <div class="modeling-btn">
+        <img src="/imgs/amplitude_icon.png">
+        <div>AMPLITUDE</div>
+    </div>
+</div>
+
+<div class="head-title">#1 Por transferência de pinça</div>
+
+<div style="display:flex;justify-content:center;">
+    <img src="/imgs/modeling/amplitude_1.gif" style="width: 60vw;">
+</div>
+
+<app-arrows-navigation leftUrl="/app/modeling/recorte" rightUrl="/app/modeling/amplitude-2">
+    <img src="/imgs/video_icon.png" style="width: 58px;" (click)="handleOpenVideo()">
+</app-arrows-navigation>
+
+@if (showModal) {
+    <div class="modal">
+        <video style="width: 100vw" controls autoplay>
+            <source src="/imgs/modeling/amplitude_1.mp4" type="video/mp4">
+        </video>
+        <div class="close-btn" (click)="showModal = false">
+            <svg viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:svg="http://www.w3.org/2000/svg">
+                <path style="fill:#6e6e6e;stroke:none;stroke-width:0.999999"
+                    d="M 32 1.5 A 30.5 30.5 0 0 0 1.5 32 A 30.5 30.5 0 0 0 32 62.5 A 30.5 30.5 0 0 0 62.5 32 A 30.5 30.5 0 0 0 32 1.5 z M 18.798828 12.798828 L 32 26 L 45.201172 12.798828 L 51.201172 18.796875 L 38 31.998047 L 51.201172 45.201172 L 45.201172 51.201172 L 31.998047 38 L 18.796875 51.201172 L 12.798828 45.201172 L 26 32 L 12.798828 18.798828 L 18.798828 12.798828 z " />
+            </svg>
+        </div>
+    </div>
+}
