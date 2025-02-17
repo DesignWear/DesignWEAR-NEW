@@ -27,17 +27,17 @@ export class GalleryComponente implements OnInit {
         this.currentPhoto = photo;
     }
 
-    handleTouchstart(ev: any): void {
+    handleTouchstart(_: any): void {
         this.showModal = true;
-        const { nativeElement }: { nativeElement: HTMLDivElement } = this.modal;
-        const img = nativeElement.children[0];
         setTimeout(() => {
+            const { nativeElement }: { nativeElement: HTMLDivElement } = this.modal;
+            const img = nativeElement.children[0];
             nativeElement.scroll({ left: (img as HTMLImageElement).naturalWidth / 3 });
             nativeElement.scroll({ top: (img as HTMLImageElement).naturalHeight / 3 });
         }, 0);
     }
 
-    handleClose(ev: any): void {
+    handleClose(_: any): void {
         this.showModal = false;
     }
 }

@@ -9,12 +9,14 @@
         <img [src]="photo.thumbnailUrl" (click)="selectPhoto(photo)">
         }
     </div>
-    <div class="modal" [hidden]="!showModal" #modal>
-        <img [src]="currentPhoto?.photoUrl">
-        <div class="close-btn" (touchstart)="handleClose($event)">
-            <svg viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
-                <path style="fill:#0000003b;stroke:none;stroke-width:0.999999" d="M 32 1.5 A 30.5 30.5 0 0 0 1.5 32 A 30.5 30.5 0 0 0 32 62.5 A 30.5 30.5 0 0 0 62.5 32 A 30.5 30.5 0 0 0 32 1.5 z M 18.798828 12.798828 L 32 26 L 45.201172 12.798828 L 51.201172 18.796875 L 38 31.998047 L 51.201172 45.201172 L 45.201172 51.201172 L 31.998047 38 L 18.796875 51.201172 L 12.798828 45.201172 L 26 32 L 12.798828 18.798828 L 18.798828 12.798828 z " />
-             </svg>
+    @if (showModal) {
+        <div class="modal-gallery" #modal>
+            <img [src]="currentPhoto?.photoUrl">
+            <div class="close-btn-gallery" (touchstart)="handleClose($event)">
+                <svg viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                    <path style="fill:#0000003b;stroke:none;stroke-width:0.999999" d="M 32 1.5 A 30.5 30.5 0 0 0 1.5 32 A 30.5 30.5 0 0 0 32 62.5 A 30.5 30.5 0 0 0 62.5 32 A 30.5 30.5 0 0 0 32 1.5 z M 18.798828 12.798828 L 32 26 L 45.201172 12.798828 L 51.201172 18.796875 L 38 31.998047 L 51.201172 45.201172 L 45.201172 51.201172 L 31.998047 38 L 18.796875 51.201172 L 12.798828 45.201172 L 26 32 L 12.798828 18.798828 L 18.798828 12.798828 z " />
+                </svg>
+            </div>
         </div>
-    </div>
+    }
 </div>

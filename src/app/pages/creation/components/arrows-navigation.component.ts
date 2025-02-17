@@ -11,7 +11,7 @@ import { RouterLink } from "@angular/router";
             </a>
         } @else {
              <a>
-                 <img src="/imgs/arrow_left.png" style="filter: grayscale(100%);">
+                 <img src="/imgs/arrow_left.png" style="filter: opacity(0.15) grayscale(1);">
              </a>
         }
         <ng-content></ng-content>
@@ -21,7 +21,7 @@ import { RouterLink } from "@angular/router";
             </a>
         } @else {
             <a>
-                <img src="/imgs/arrow_right.png" style="filter: grayscale(100%);">
+                <img src="/imgs/arrow_right.png" style="filter: opacity(0.15) grayscale(1);">
             </a>
         }
     </div>
