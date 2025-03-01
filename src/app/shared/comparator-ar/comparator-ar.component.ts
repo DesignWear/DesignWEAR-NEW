@@ -6,6 +6,13 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from "@angular/core";
     <div class="container">
         <img [src]="slideUrl">
         <video #video autoplay playsinline></video>
+        @if (slideUrls && slideUrls.length > 0) {
+            <div class="pagination-content">
+                @for (item of slideUrls; track item; let i = $index) {
+                    <div class="pagination-btn noselect" (click)="handleSelect(i)">{{ i + 1 }}</div>
+                }
+            </div>
+        }
     </div>
     @if (hasMultipleCameras) {
         <div class="change-camera-btn">
@@ -19,6 +26,22 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from "@angular/core";
         width: 100vw;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
+    }
+    .pagination-content {
+        margin: 1rem 0;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    .pagination-btn {
+        text-align: center;
+        color: white;
+        background: var(--primary-color);
+        padding: 12px;
+        width: 25px;
+        height: 25px;
+        border-radius: 25px;
     }
     img {
         position: absolute;
@@ -40,7 +63,8 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from "@angular/core";
     standalone: true,
 })
 export class ComparatorArComponent implements OnInit {
-    @Input() slideUrl: string = '/imgs/slides/18/passo18.svg';
+    @Input() slideUrl?: string;
+    @Input() slideUrls?: string[];
     @ViewChild('video', { static: true }) videoElement!: ElementRef<HTMLVideoElement>;
 
     private currentStream: MediaStream | null = null;
@@ -50,6 +74,10 @@ export class ComparatorArComponent implements OnInit {
 
     ngOnInit(): void {
         this.checkCameras().then(() => this.startCamera());
+        
+        if (this.slideUrls && this.slideUrls.length > 0) {
+            this.slideUrl = this.slideUrls.at(0);
+        }
     }
 
     // Verifica se há mais de uma câmera disponível
@@ -101,5 +129,9 @@ export class ComparatorArComponent implements OnInit {
         } else {
             console.warn('Não há mais de uma câmera disponível para trocar.');
         }
+    }
+
+    handleSelect(i: number): void {
+        this.slideUrl = this.slideUrls?.at(i);
     }
 }

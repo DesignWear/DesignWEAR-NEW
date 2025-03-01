@@ -1,0 +1,19 @@
+.display-video {
+    width: calc(100vw - 90px);
+    padding: 0 45px;
+
+    video {
+        width: 100%;
+    }
+}
+
+.nav-btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    img {
+        width: 50px;
+        margin: 6px 15px;
+    }
+}
