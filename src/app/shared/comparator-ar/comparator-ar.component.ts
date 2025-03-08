@@ -33,6 +33,8 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from "@angular/core";
         display: flex;
         align-items: center;
         gap: 1rem;
+        position: fixed;
+        bottom: 0px;
     }
     .pagination-btn {
         text-align: center;
@@ -54,6 +56,9 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from "@angular/core";
         height: 3.5rem;
         display: flex;
         justify-content: center;
+        width: 100%;
+        position: fixed;
+        bottom: 64px;
     }
     .change-camera-btn > img {
         width: 3rem;
