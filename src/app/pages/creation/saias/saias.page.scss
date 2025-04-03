@@ -1,15 +1,20 @@
-.saia-btn {
-    display: block;
-    margin: 0 3.2rem;
-    text-decoration: unset;
-    color: blue;
+:host {
+    background-color: white;
     
-    div {
-        font-weight: bold;
-        margin: .5rem 0;
-    }
-
-    img {
-        width: 100%;
+    .saia-btn {
+        display: block;
+        margin: 0 3.2rem;
+        text-decoration: unset;
+        color: blue;
+        
+        div {
+            font-weight: bold;
+            margin: .5rem 0;
+        }
+    
+        img {
+            width: 100%;
+        }
     }
 }
+

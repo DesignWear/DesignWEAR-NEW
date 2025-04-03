@@ -1,9 +1,11 @@
 <div class="container">
+    <img src="imgs/topbar_background2.svg">
     @for (menu of getSitemap(); track menu; let i = $index) {
         <a class="main-bnt" [routerLink]="menu.url">
-            <div>
-                <img [src]="menu.imageUrl">
-                <span>{{ menu.text }}</span>
+            <img [src]="menu.imageUrl">
+            <div class="main-bnt-div">
+                <div class="menu-name">{{ menu.text }}</div>
+                <div class="sub-menu-name">Módulo 1</div>
             </div>
         </a>
     }

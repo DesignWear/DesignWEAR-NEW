@@ -1,13 +1,14 @@
 import { Component, Input } from "@angular/core";
 import { NavigationEnd, Router, RouterLink, RouterLinkActive } from "@angular/router";
 import SITEMAP, { Sitemap } from "../../sitemenu";
+import { MenuIconComponemt } from "../menu-icon/menu-icon.component";
 
 @Component({
     selector: 'app-top-menu',
     templateUrl: './top-menu.component.html',
     styleUrl: './top-menu.component.scss',
     standalone: true,
-    imports: [RouterLink, RouterLinkActive],
+    imports: [RouterLink, RouterLinkActive, MenuIconComponemt],
 })
 export class TopMenuComponent {
     @Input() showMenu: boolean = true;

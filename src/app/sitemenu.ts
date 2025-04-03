@@ -1,4 +1,5 @@
 export type Sitemap = {
+    id: string;
     text: string;
     url: string;
     imageUrl: string;
@@ -6,29 +7,34 @@ export type Sitemap = {
 
 const SITEMAP: Sitemap[] = [
     {
-        text: 'CRIAÇÃO',
+        id: 'criacao',
+        text: 'Criação',
         url: '/app/creation',
-        imageUrl: '/imgs/saia_icon.png',
+        imageUrl: '/imgs/saia_icon.svg',
     },
     {
-        text: 'BASE',
+        id: 'base',
+        text: 'Base',
         url: '/app/base',
-        imageUrl: '/imgs/base_icon.png',
+        imageUrl: '/imgs/base_icon.svg',
     },
     {
-        text: 'MODELAGEM',
+        id: 'modelagem',
+        text: 'Modelagem',
         url: '/app/modeling',
-        imageUrl: '/imgs/modelagem_icon.png',
+        imageUrl: '/imgs/modelagem_icon.svg',
     },
     {
-        text: 'CORTE',
+        id: 'corte',
+        text: 'Corte',
         url: '/app/cutting',
-        imageUrl: '/imgs/tesoura_icon.png',
+        imageUrl: '/imgs/tesoura_icon.svg',
     },
     {
-        text: 'CONFEÇÃO',
+        id: 'confecao',
+        text: 'Confeção',
         url: '/app/making',
-        imageUrl: '/imgs/maquina_icon.png',
+        imageUrl: '/imgs/maquina_icon.svg',
     },
 ];
 
