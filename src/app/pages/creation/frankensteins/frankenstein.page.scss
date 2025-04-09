@@ -1,3 +1,9 @@
+.create-title {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+}
+
 img {
     width: 85%;
     margin: 0 auto 18px auto;
@@ -6,29 +12,18 @@ img {
 
 div.container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    div {
-        width: 100%;
-    }
+    flex-direction: column;
+    gap: .5rem;
+    padding: 0 3rem;
 }
 
 div.select {
-    .title {
-        font-size: 16px;
-        font-weight: bolder;
-        color: var(--primary-color);
-        text-align: center;
-        margin: 0.5rem 0;
-    }
-
     select {
         width: 100%;
         font-size: 18px;
         padding: 6px;
         border-radius: 19px;
-        background: linear-gradient(white, white) padding-box, linear-gradient(to right, rgb(255, 0, 128), rgb(0, 4, 255)) border-box;
+        background: linear-gradient(white, white) padding-box, linear-gradient(to right, var(--primary-color), var(--primary-color)) border-box;
         border: 2px solid transparent;
     }
 }

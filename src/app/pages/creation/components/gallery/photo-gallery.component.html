@@ -1,0 +1,31 @@
+<div class="gallery-container">
+  <div class="left-arrow" (click)="previous()">
+    <svg width="64" height="64" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+      <path style="fill:#000000;opacity:0.15" d="M 32 1 A 31 31 0 0 0 1 32 A 31 31 0 0 0 32 63 A 31 31 0 0 0 63 32 A 31 31 0 0 0 32 1 z M 37.660156 14.783203 L 37.660156 49.216797 L 15.962891 32 L 37.660156 14.783203 z " />
+    </svg>
+  </div>
+  <div class="current-photo">
+    <img [src]="photo" (click)="openModal()"/>
+  </div>
+  <div class="right-arrow" (click)="next()">
+    <svg width="64" height="64" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+      <path style="fill:#000000;opacity:0.15" d="M 32,1 A 31,31 0 0 1 63,32 31,31 0 0 1 32,63 31,31 0 0 1 1,32 31,31 0 0 1 32,1 Z M 26.339844,14.783203 V 49.216797 L 48.037109,32 Z" />
+    </svg>
+  </div>
+</div>
+<div style="text-align:center;padding:1rem;color:rgb(175, 175, 175);">{{ currentIndex + 1 }}/{{ photos.length }}</div>
+
+@if (showModal) {
+  <div class="modal">
+      <div #openedPhotoContainer class="opend-photo" (click)="$event.stopPropagation()">
+        <img [src]="photo">
+      </div>
+      <div class="close-btn" (click)="showModal = false">
+          <svg viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg"
+              xmlns:svg="http://www.w3.org/2000/svg">
+              <path style="fill:#6e6e6e;stroke:none;stroke-width:0.999999"
+                  d="M 32 1.5 A 30.5 30.5 0 0 0 1.5 32 A 30.5 30.5 0 0 0 32 62.5 A 30.5 30.5 0 0 0 62.5 32 A 30.5 30.5 0 0 0 32 1.5 z M 18.798828 12.798828 L 32 26 L 45.201172 12.798828 L 51.201172 18.796875 L 38 31.998047 L 51.201172 45.201172 L 45.201172 51.201172 L 31.998047 38 L 18.796875 51.201172 L 12.798828 45.201172 L 26 32 L 12.798828 18.798828 L 18.798828 12.798828 z " />
+          </svg>
+      </div>
+  </div>
+}

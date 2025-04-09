@@ -44,6 +44,21 @@ body {
     margin: 6px;
 }
 
+.botton-title {
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 6px;
+}
+
+.botton-sub-title {
+    text-align: center;
+    font-size: large;
+    color: var(--secondary-color);
+    margin: 6px;
+}
+
 .modal {
     position: fixed;
     top: 0px;

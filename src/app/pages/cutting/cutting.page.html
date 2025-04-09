@@ -1,4 +1,14 @@
-<div class="head-title">4º - CORTAR</div>
+<div class="create-title">
+    <div>
+        <div style="font-size:large;font-weight:bold;color:var(--secondary-color);">Corte</div>
+        <div style="color:var(--primary-color);">Módulo 4</div>
+        <div style="font-size:smaller;color:var(--secondary-color);">Escolher acabamento</div>
+    </div>
+    <a routerLink="/home">
+        <div style="font-size: x-small;padding-top: 1rem;">Voltar ao menu</div>
+    </a>
+</div>
+
 <div class="display-video">
     @if (showVideo) {
         <video controls>
@@ -9,7 +19,7 @@
     }
 </div>
 <div class="head-title">{{ 'Passo ' + (_currentSlideIndex + 1) }}</div>
-<div class="head-title">{{ currentSlide.text }}</div>
+<div class="head-title" style="color: var(--secondary-color);">{{ currentSlide.text }}</div>
 <div class="nav-btns">
     <div (click)="handlePrevious()">
         @if (_currentSlideIndex > 0) {

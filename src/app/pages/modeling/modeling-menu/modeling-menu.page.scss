@@ -1,24 +1,32 @@
+.create-title {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+}
+
 .container {
-    background-image: url(/imgs/modeling/img_menu.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 50vh;
-    margin: 0rem 1.5rem;
+    margin: 0 4rem;
+
+    img {
+        width: 100%;
+    }
 }
 
 .buttons {
-    position: absolute;
     display: flex;
-    width: 65vw;
-    right: 20px;
-    height: 50vh;
     flex-direction: column;
-    justify-content: center;
+    margin: 0 4rem;
+    gap: 1rem;
 }
 
-.sub-title {
-    font-size: small;
-    font-weight: 500;
-    color: var(--primary-color);
-    margin: 6px;
+.modeling-btn2 {
+    display: flex;
+    border: 1px solid var(--primary-color);
+    border-radius: 20px;
+    justify-content: center;
+    padding: 6px;
+
+    div {
+        color: var(--primary-color);
+    }
 }

@@ -1,0 +1,53 @@
+.gallery-container {
+  display: flex;
+  align-items: center;
+
+  .left-arrow {
+    display: flex;
+    justify-content: center;
+    width: 15vw;
+
+    svg {
+      width: 80%;
+    }
+  }
+
+  .current-photo {
+    width: 70vw;
+    height: 50vh;
+    overflow: hidden;
+    border-radius: 2.5rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .right-arrow {
+    display: flex;
+    justify-content: center;
+    width: 15vw;
+
+    svg {
+      width: 80%;
+    }
+  }
+}
+
+// .opend-photo {
+//   width: 100vw;
+//   height: 100vh;
+//   overflow: scroll;
+// }
+
+.opend-photo {
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+  
+  img {
+    max-width: none;
+    max-height: none;
+  }
+}

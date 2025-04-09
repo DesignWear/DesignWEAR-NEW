@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { ComparatorArComponent } from "../../shared/comparator-ar/comparator-ar.component";
+import { RouterLink } from "@angular/router";
 
 export type Slide = {
     text?: string | null;
@@ -12,7 +13,7 @@ export type Slide = {
     selector: 'app-cutting-page',
     templateUrl: './cutting.page.html',
     styleUrl: './cutting.page.scss',
-    imports: [ComparatorArComponent],
+    imports: [ComparatorArComponent, RouterLink],
     standalone: true,
 })
 export class CuttingPage {
@@ -38,7 +39,7 @@ export class CuttingPage {
             imgUrls: null,
         },
         {
-            text: 'APONTAR AS IMAGENS SOBRE SEU TECIDO E VER SUGESTÕES DE ENCAIXE',
+            text: 'Apontar as imagens sobre seu tecido e ver sugestões de encaixe',
             videoUrl: '/imgs/corte/corte_3.mp4',
             showArBtn: true,
             imgUrls: [

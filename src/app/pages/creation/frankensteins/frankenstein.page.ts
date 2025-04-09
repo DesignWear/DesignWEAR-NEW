@@ -1,13 +1,13 @@
 import { Component } from "@angular/core";
-import { ArrowsNavigationComponent } from "../components/arrows-navigation.component";
 import { FormsModule } from "@angular/forms";
+import { RouterLink } from "@angular/router";
 
 @Component({
     selector: 'app-frankenstein-page',
     templateUrl: './frankenstein.page.html',
     styleUrls: ['./frankenstein.page.scss'],
     standalone: true,
-    imports: [ArrowsNavigationComponent, FormsModule],
+    imports: [FormsModule, RouterLink],
 })
 export class FrankensteinsPage {
     comprimentoId?: string = '0';
