@@ -35,12 +35,6 @@
   }
 }
 
-// .opend-photo {
-//   width: 100vw;
-//   height: 100vh;
-//   overflow: scroll;
-// }
-
 .opend-photo {
   width: 100vw;
   height: 100vh;
@@ -49,5 +43,19 @@
   img {
     max-width: none;
     max-height: none;
+  }
+}
+
+.modeling-btn2 {
+  display: flex;
+  border: 1px solid var(--primary-color);
+  border-radius: 20px;
+  justify-content: center;
+  padding: 6px;
+  margin: 0 7rem;
+
+  div {
+    font-weight: bold;
+    color: var(--primary-color);
   }
 }

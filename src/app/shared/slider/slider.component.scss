@@ -64,4 +64,13 @@
             margin: 0.5rem 0;
         }
     }
+
+    .description {
+        margin: 0 1rem 18px 1rem;
+        color: var(--secondary-color);
+        background: rgb(0 0 0 / 5%);
+        padding: 6px;
+        border-radius: 6px;
+        font-size: small;
+    }
 }

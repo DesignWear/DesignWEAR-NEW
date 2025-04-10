@@ -19,7 +19,7 @@ export class FrankensteinsPage {
         if (this.comprimentoId !== '0' && this.pincaId !== '0' && this.amplitudeId !== '0' && this.cintaId !== '0') {
             return `/imgs/frankensteins/${this.comprimentoId}.${this.pincaId}.${this.amplitudeId}.${this.cintaId}.png`;
         } else {
-            return '/imgs/frankensteins/0.0.0.0.png';
+            return '/imgs/frankensteins/0.0.0.0.svg';
         }
     }
 }

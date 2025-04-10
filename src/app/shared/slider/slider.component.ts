@@ -40,43 +40,55 @@ export class SliderComponent {
             slideUrl: '/imgs/slides/1/passo1.svg',
             audioUrl: '/imgs/slides/1/passo1.mp3',
             videoUrl: '/imgs/slides/1/passo1.mp4',
-            text: '',
+            text: `Fazer retângulo:
+1→2 e 3→4 = Anca÷2 + Folga Anca÷2 (47cm)
+1→3 e 2→4 = Comprimento da Base (45cm)`,
         },
         {
             slideUrl: '/imgs/slides/2/passo2.svg',
             audioUrl: '/imgs/slides/2/passo2.mp3',
             videoUrl: '/imgs/slides/2/passo2.mp4',
-            text: '',
+            text: '1→5 e 2→6 = Cintura até Anca (20,3cm)',
         },
         {
             slideUrl: '/imgs/slides/3/passo3.svg',
             audioUrl: '/imgs/slides/3/passo3.mp3',
             videoUrl: '/imgs/slides/3/passo3.mp4',
-            text: '',
+            text: '7 = Dividir Retângulo ao meio',
         },
         {
             slideUrl: '/imgs/slides/4/passo4.svg',
             audioUrl: '/imgs/slides/4/passo4.mp3',
             videoUrl: '/imgs/slides/4/passo4.mp4',
-            text: '',
+            text: `7→8 = subir 2cm
+1→9 e 2→10 =
+Cint÷4 + 3 (pinça) + Folga Cint÷4 (20,25cm)`,
         },
         {
             slideUrl: '/imgs/slides/5/passo5.svg',
             audioUrl: '/imgs/slides/5/passo5.mp3',
             videoUrl: '/imgs/slides/5/passo5.mp4',
-            text: '',
+            text: `1→11 e 1→12 = Peito÷10 + 1cm (9,4cm)
+                    
+Marcar 1,5cm para cada lado
+
+11→13 = 14cm
+12→14 = 12cm`,
         },
         {
             slideUrl: '/imgs/slides/6/passo6.svg',
             audioUrl: '/imgs/slides/6/passo6.mp3',
             videoUrl: '/imgs/slides/6/passo6.mp4',
-            text: '',
+            text: `1→15 = 1,5cm
+2→16 = 1cm
+Traçar linha de apoio 90◦
+`,
         },
         {
             slideUrl: '/imgs/slides/7/passo7.svg',
             audioUrl: '/imgs/slides/7/passo7.mp3',
             videoUrl: '/imgs/slides/7/passo7.mp4',
-            text: '',
+            text: `Fechar pinças e traçar Cintura com curva`,
         },
     ];
 

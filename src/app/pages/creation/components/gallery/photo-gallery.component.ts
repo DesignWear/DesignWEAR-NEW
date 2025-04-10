@@ -1,13 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, ViewChild, ElementRef } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-photo-gallery',
   templateUrl: './photo-gallery.component.html',
   styleUrls: ['./photo-gallery.component.scss'],
   standalone: true,
-  imports: [CommonModule]
+  imports: [CommonModule, RouterLink]
 })
 export class PhotoGalleryComponent {
   @ViewChild('openedPhotoContainer') openedPhotoContainer!: ElementRef<HTMLDivElement>;
