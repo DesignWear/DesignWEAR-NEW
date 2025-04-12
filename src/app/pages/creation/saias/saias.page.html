@@ -1,21 +1,11 @@
-<a class="saia-btn" routerLink="/app/creation/saia-1">
-    <div>CURTA COM RECORTES</div>
-    <img src="/imgs/saias/saia_1.png">
-</a>
-<a class="saia-btn" routerLink="/app/creation/saia-2">
-    <div>LONGA (anca justa)</div>
-    <img src="/imgs/saias/saia_2.png">
-</a>
-<a class="saia-btn" routerLink="/app/creation/saia-3">
-    <div>LONGA AMPLA</div>
-    <img src="/imgs/saias/saia_3.png">
-</a>
-<a class="saia-btn" routerLink="/app/creation/saia-4">
-    <div>CURTA COM PINÇAS</div>
-    <img src="/imgs/saias/saia_4.png">
-</a>
-<a class="saia-btn" routerLink="/app/creation/frankensteins">
-    <div>Crie</div>
-    <img src="/imgs/saias/frankensteins.png">
-</a>
-
+<div class="create-title">
+    <div>
+        <div style="font-size:large;font-weight:bold;color:var(--secondary-color);">Criação</div>
+        <div style="color:var(--primary-color);">Módulo 1</div>
+        <div style="font-size:smaller;color:var(--secondary-color);">Observa as seguintes inspirações</div>
+    </div>
+    <a routerLink="/home">
+        <div style="font-size: x-small;padding-top: 1rem;">Voltar ao menu</div>
+    </a>
+</div>
+<app-photo-gallery [photos]="photos"></app-photo-gallery>

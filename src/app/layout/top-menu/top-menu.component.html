@@ -7,8 +7,6 @@
             @for (menu of getSitemap(); track menu; let i = $index) {
                 <a class="main-bnt" [routerLink]="menu.url" routerLinkActive #rla="routerLinkActive">
                     <app-menu-icon [id]="menu.id" [isActive]="rla.isActive"></app-menu-icon>
-                    <!-- <span>{{ rla.isActive ? 'S' : 'N' }}</span>
-                    <img [src]="menu.imageUrl"> -->
                 </a>
             }
         </div>

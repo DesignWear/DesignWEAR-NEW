@@ -34,7 +34,7 @@ export class PhotoGalleryComponent {
     if (this.currentIndex + 1 < this.photos.length) {
       this.currentIndex++;
     } else {
-      this.router.navigate(['/app/frankensteins']);
+      this.router.navigate(['/app/creation/frankensteins']);
     }
   }
 

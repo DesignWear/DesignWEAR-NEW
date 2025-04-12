@@ -1,0 +1,25 @@
+@if (showVideo) {
+    <video controls>
+        <source [src]="videosArray[currentVideoIndex]" />
+    </video>
+
+    <div class="nav-btns">
+        <div (click)="handlePrevious()">
+            @if (currentVideoIndex > 0) {
+                <img src="/imgs/arrow_left.png">
+            } @else {
+                <img src="/imgs/arrow_left.png" style="filter: opacity(0.15) grayscale(1);">
+            }
+        </div>
+        <div style="color: rgba(0, 0, 0, 0.25);">{{ currentVideoIndex + 1 }} / {{ videosArray.length }}</div>
+        <div (click)="handleNext()">
+            @if (currentVideoIndex === videosArray.length - 1) {
+                <img src="/imgs/arrow_right.png" style="filter: opacity(0.15) grayscale(1);">
+            } @else {
+                <img src="/imgs/arrow_right.png">
+            }
+        </div>
+    </div>
+} @else {
+    <div class="empty-video">carregando...</div>
+}

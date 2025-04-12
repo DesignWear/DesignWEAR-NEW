@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { ComparatorArComponent } from "../comparator-ar/comparator-ar.component";
 import { GltfViewerComponent } from "../gltf-viewer/gltf-viewer.component";
+import { Router } from "@angular/router";
 
 export enum ActionType {
     PlayAudio = 1,
@@ -94,8 +95,11 @@ Traçar linha de apoio 90◦
 
     showModal: boolean = false;
     currentAction?: ActionType | null;
-
     showAudioPlayer: boolean = false;
+
+    constructor(
+        private readonly router: Router,
+    ) { }
 
     handlePrevious(): void {
         if (this._currentSlideIndex > 0) {
@@ -134,5 +138,9 @@ Traçar linha de apoio 90◦
 
     handleCloseModal(ev: any): void {
         this.showModal = false;
+    }
+
+    handleClaculator(): void {
+        this.router.navigate(['/app/base/calculator']);
     }
 }

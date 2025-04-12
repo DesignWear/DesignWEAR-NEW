@@ -1,0 +1,28 @@
+:host {
+    video {
+        width: calc(100vw - 90px);
+        padding: 0 45px;
+    }
+
+    .empty-video {
+        display: flex;
+        border: 2px solid rgba(0, 0, 0, 0.5);
+        margin: 6px;
+        text-align: center;
+        height: 40vh;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .nav-btns {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    
+        img {
+            width: 50px;
+            margin: 6px 15px;
+        }
+    }
+}

@@ -3,3 +3,33 @@
     justify-content: space-between;
     margin: 1rem;
 }
+
+div.container {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    padding: 0 3rem;
+}
+
+div.select {
+    select {
+        width: 100%;
+        font-size: 18px;
+        padding: 6px;
+        border-radius: 19px;
+        background: linear-gradient(white, white) padding-box, linear-gradient(to right, var(--primary-color), var(--primary-color)) border-box;
+        border: 2px solid transparent;
+    }
+}
+
+.empty-video {
+    display: flex;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    margin: 6px;
+    text-align: center;
+    height: 40vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}

@@ -17,6 +17,9 @@ import { ModelingMoldes1Page } from './pages/modeling/modeling-models-1/modeling
 import { ModelingAmplitude2Page } from './pages/modeling/modeling-amplitude-2/modeling-amplitude-2.page';
 import { ModelingAcabamento2Page } from './pages/modeling/modeling-acabamento-2/modeling-acabamento-2.page';
 import { ModelingMoldes2Page } from './pages/modeling/modeling-models-2/modeling-moldes-2.page';
+import { SaiasPage } from './pages/creation/saias/saias.page';
+import { SlidesPage } from './pages/base/slides/slides.page';
+import { CalculatorPage } from './pages/base/calculator/calculator.page';
 
 export const routes: Routes = [
     { path: '', component: SplashPage },
@@ -25,9 +28,24 @@ export const routes: Routes = [
         component: AppLayoutComponent,
         children: [
             { path: 'home', component: HomePage },
-            { path: 'creation', component: CreationPage },
-            { path: 'frankensteins', component: FrankensteinsPage },
-            { path: 'base', component: BasePage },
+            {
+                path: 'creation',
+                component: CreationPage,
+                children: [
+                    { path: 'saias', component: SaiasPage },
+                    { path: 'frankensteins', component: FrankensteinsPage },
+                    { path: '', redirectTo: 'saias', pathMatch: 'full' },
+                ]
+            },
+            {
+                path: 'base',
+                component: BasePage,
+                children: [
+                    { path: 'slides', component: SlidesPage },
+                    { path: 'calculator', component: CalculatorPage },
+                    { path: '', redirectTo: 'slides', pathMatch: 'full' },
+                ],
+            },
             {
                 path: 'modeling',
                 component: ModelingPage,
