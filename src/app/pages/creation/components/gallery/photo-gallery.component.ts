@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, ViewChild, ElementRef } from '@angular/core';
+import { Component, Input, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
+import { GamificationService, ModuleId } from '../../../../services/gamification.service';
 
 @Component({
   selector: 'app-photo-gallery',
@@ -9,7 +10,7 @@ import { Router, RouterLink } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterLink]
 })
-export class PhotoGalleryComponent {
+export class PhotoGalleryComponent implements OnInit {
   @ViewChild('openedPhotoContainer') openedPhotoContainer!: ElementRef<HTMLDivElement>;
 
   @Input() photos: string[] = [];
@@ -17,7 +18,12 @@ export class PhotoGalleryComponent {
 
   constructor(
     private readonly router: Router,
+    private readonly gamificationService: GamificationService,
   ) { }
+
+  ngOnInit(): void {
+    this.gamificationService.checkPoint({ moduleId: ModuleId.Criacao, value: this.currentIndex });
+  }
   
   currentIndex = 0;
   get photo(): string {
@@ -33,6 +39,7 @@ export class PhotoGalleryComponent {
   next(): void {
     if (this.currentIndex + 1 < this.photos.length) {
       this.currentIndex++;
+      this.gamificationService.checkPoint({ moduleId: ModuleId.Criacao, value: this.currentIndex });
     } else {
       this.router.navigate(['/app/creation/frankensteins']);
     }

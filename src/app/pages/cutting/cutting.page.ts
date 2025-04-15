@@ -1,6 +1,7 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { ComparatorArComponent } from "../../shared/comparator-ar/comparator-ar.component";
-import { RouterLink } from "@angular/router";
+import { GamificationService, ModuleId } from "../../services/gamification.service";
+import { PageHeaderComponent } from "../../shared/page-header/page-header.component";
 
 export type Slide = {
     text?: string | null;
@@ -13,10 +14,10 @@ export type Slide = {
     selector: 'app-cutting-page',
     templateUrl: './cutting.page.html',
     styleUrl: './cutting.page.scss',
-    imports: [ComparatorArComponent, RouterLink],
+    imports: [ComparatorArComponent, PageHeaderComponent],
     standalone: true,
 })
-export class CuttingPage {
+export class CuttingPage implements OnInit {
     showModal: boolean = false;
     showVideo: boolean = true;
 
@@ -76,6 +77,14 @@ export class CuttingPage {
         },
     ];
 
+    constructor(
+        private gamificationService: GamificationService,
+    ) { }
+
+    ngOnInit(): void {
+        this.gamificationService.checkPoint({ moduleId: ModuleId.Corte, value: this._currentSlideIndex, });
+    }
+
     handlePrevious(): void {
         if (this._currentSlideIndex > 0) {
             this.showVideo = false;
@@ -88,6 +97,7 @@ export class CuttingPage {
         if (this._currentSlideIndex < this.slides.length - 1) {
             this.showVideo = false;
             this._currentSlideIndex++;
+            this.gamificationService.checkPoint({ moduleId: ModuleId.Corte, value: this._currentSlideIndex, });
             setTimeout(() => this.showVideo = true, 100);
         }
     }

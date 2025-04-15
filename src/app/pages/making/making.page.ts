@@ -1,8 +1,9 @@
 import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { RouterLink } from "@angular/router";
 import { VideoGalleryComponente } from "./componente/video-gallery.componente";
+import { GamificationService, ModuleId } from "../../services/gamification.service";
+import { PageHeaderComponent } from "../../shared/page-header/page-header.component";
 
 type Sequence = {
     key: string;
@@ -13,7 +14,7 @@ type Sequence = {
     selector: 'app-making-page',
     templateUrl: './making.page.html',
     styleUrl: './making.page.scss',
-    imports: [CommonModule, FormsModule, RouterLink, VideoGalleryComponente],
+    imports: [CommonModule, FormsModule, VideoGalleryComponente, PageHeaderComponent],
     standalone: true,
 })
 export class MakingPage {
@@ -41,6 +42,10 @@ export class MakingPage {
         { key: '3.2.2', values: [9, 10, 3, 4, 5, 6, 7, 14] },
     ]
 
+    constructor(
+        private gamificationService: GamificationService,
+    ) { }
+
     handleSelectChange(ev: any): void {
         this.showGallery = false;
         const sequence = this.sequences.find(sequence => sequence.key === `${this.select1Id}.${this.select2Id}.${this.select3Id}`);
@@ -48,6 +53,8 @@ export class MakingPage {
         if (!sequence) {
             return;
         }
+
+        this.gamificationService.checkPoint({ moduleId: ModuleId.Confecao, value: 'makingDone' });
 
         setTimeout(() => {
             this.videos = sequence.values.map((item) => `imgs/making/COSTURA_${item}.mp4`);

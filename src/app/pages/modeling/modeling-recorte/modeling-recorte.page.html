@@ -1,24 +1,11 @@
-<div class="create-title">
-    <div>
-        <div style="font-size:large;font-weight:bold;color:var(--secondary-color);">Modelagem</div>
-        <div style="color:var(--primary-color);">Módulo 3</div>
-        <div style="font-size:smaller;color:var(--secondary-color);">Instruções para incluir recorte</div>
-    </div>
-    <a routerLink="/home">
-        <div style="font-size: x-small;padding-top: 1rem;">Voltar ao menu</div>
-    </a>
-</div>
-
+<app-page-header title="Modelagem" module="3" subtitle="Instruções para incluir recorte"></app-page-header>
 <div style="display:flex;justify-content:center;">
     <img src="/imgs/modeling/recorte.gif" style="width: 60vw;">
 </div>
-
 <div class="botton-title">Recorte</div>
-
 <app-arrows-navigation leftUrl="/app/modeling/comprimento" rightUrl="/app/modeling/amplitude-1">
     <img src="/imgs/video_icon.png" style="width: 58px;" (click)="handleOpenVideo()">
 </app-arrows-navigation>
-
 @if (showModal) {
     <div class="modal">
         <video style="width: 100vw" controls autoplay>

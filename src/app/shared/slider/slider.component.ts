@@ -1,7 +1,8 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { ComparatorArComponent } from "../comparator-ar/comparator-ar.component";
 import { GltfViewerComponent } from "../gltf-viewer/gltf-viewer.component";
 import { Router } from "@angular/router";
+import { GamificationService, ModuleId } from "../../services/gamification.service";
 
 export enum ActionType {
     PlayAudio = 1,
@@ -29,7 +30,7 @@ export type Slide = {
     imports: [ComparatorArComponent, GltfViewerComponent],
     standalone: true,
 })
-export class SliderComponent {
+export class SliderComponent implements OnInit {
     _currentSlideIndex: number = 0;
     
     get currentSlide(): Slide {
@@ -99,7 +100,12 @@ Traçar linha de apoio 90◦
 
     constructor(
         private readonly router: Router,
+        private readonly gamificationService: GamificationService,
     ) { }
+    
+    ngOnInit(): void {
+        this.gamificationService.checkPoint({ moduleId: ModuleId.Base, value: this._currentSlideIndex });
+    }
 
     handlePrevious(): void {
         if (this._currentSlideIndex > 0) {
@@ -112,6 +118,7 @@ Traçar linha de apoio 90◦
         if (this._currentSlideIndex < this.slides.length - 1) {
             this._currentSlideIndex++;
             this.showAudioPlayer = false;
+            this.gamificationService.checkPoint({ moduleId: ModuleId.Base, value: this._currentSlideIndex });
         }
     }
 

@@ -1,12 +1,12 @@
 import { Component } from "@angular/core";
-import { RouterLink } from "@angular/router";
 import { PhotoGalleryComponent } from "../components/gallery/photo-gallery.component";
+import { PageHeaderComponent } from "../../../shared/page-header/page-header.component";
 
 @Component({
     selector: 'app-saias-page',
     templateUrl: './saias.page.html',
     styleUrl: './saias.page.scss',
-    imports: [PhotoGalleryComponent, RouterLink],
+    imports: [PhotoGalleryComponent, PageHeaderComponent],
     standalone: true,
 })
 export class SaiasPage {

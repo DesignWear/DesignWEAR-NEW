@@ -1,14 +1,4 @@
-<div class="create-title">
-    <div>
-        <div style="font-size:large;font-weight:bold;color:var(--secondary-color);">Confeção</div>
-        <div style="color:var(--primary-color);">Módulo 5</div>
-        <div style="font-size:smaller;color:var(--secondary-color);">Indica os pormenores da tua saia</div>
-    </div>
-    <a routerLink="/home">
-        <div style="font-size: x-small;padding-top: 1rem;">Voltar ao menu</div>
-    </a>
-</div>
-
+<app-page-header title="Confeção" module="5" subtitle="Indica os pormenores da tua saia"></app-page-header>
 @if (showGallery) {
     <app-video-gallery-componente [videos]="videos"></app-video-gallery-componente>
 } @else {
@@ -18,7 +8,6 @@
         <img src="/imgs/down_arrow.svg">
     </div>
 }
-
 <div class="container">
     <div class="select">
         <select id="1" [(ngModel)]="select1Id" (ngModelChange)="handleSelectChange($event)">

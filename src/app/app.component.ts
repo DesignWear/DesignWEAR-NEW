@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { GamificationService } from './services/gamification.service';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +9,21 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss',
   standalone: true,
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  showMesssage: boolean = false;
+  message: string = '';
+
+  constructor(
+    private readonly gameficationService: GamificationService,
+  ) { }
+
+  ngOnInit(): void {
+    this.gameficationService.completionEvent.subscribe((message: string) => {
+      setTimeout(() => {
+        this.message = message;
+        this.showMesssage = true;
+        setTimeout(() => this.showMesssage = false, 4000);
+      }, 0);
+    });
+  }
 }

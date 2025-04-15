@@ -1,25 +1,12 @@
-<div class="create-title">
-    <div>
-        <div style="font-size:large;font-weight:bold;color:var(--secondary-color);">Modelagem</div>
-        <div style="color:var(--primary-color);">Módulo 3</div>
-        <div style="font-size:smaller;color:var(--secondary-color);">Escolher acabamento</div>
-    </div>
-    <a routerLink="/home">
-        <div style="font-size: x-small;padding-top: 1rem;">Voltar ao menu</div>
-    </a>
-</div>
-
+<app-page-header title="Modelagem" module="3" subtitle="Escolher acabamento"></app-page-header>
 <div style="display:flex;justify-content:center;">
     <img src="/imgs/modeling/acabamento_1.gif" style="width: 60vw;">
 </div>
-
 <div class="botton-title">Acabamento</div>
 <div class="botton-sub-title">#1 Limpeza interna</div>
-
 <app-arrows-navigation leftUrl="/app/modeling/amplitude-2" rightUrl="/app/modeling/acabamento-2">
     <img src="/imgs/video_icon.png" style="width: 58px;" (click)="handleOpenVideo()">
 </app-arrows-navigation>
-
 @if (showModal) {
     <div class="modal">
         <video style="width: 100vw" controls autoplay>
