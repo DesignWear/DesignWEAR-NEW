@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
       setTimeout(() => {
         this.message = message;
         this.showMesssage = true;
-        setTimeout(() => this.showMesssage = false, 4000);
+        setTimeout(() => this.showMesssage = false, 8000);
       }, 0);
     });
   }

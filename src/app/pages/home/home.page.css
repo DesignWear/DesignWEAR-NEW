@@ -10,6 +10,11 @@ div.container > img {
     width: 100vw;
 }
 
+div.container > .main-menu {
+    height: 75vh;
+    overflow-y: scroll;
+}
+
 a.main-bnt {
     display: flex;
     gap: 1rem;

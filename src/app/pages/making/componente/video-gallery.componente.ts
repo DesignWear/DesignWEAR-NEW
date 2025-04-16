@@ -1,5 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { Component, Input } from "@angular/core";
+import { GamificationService, ModuleId } from "../../../services/gamification.service";
 
 @Component({
     selector: 'app-video-gallery-componente',
@@ -19,6 +20,10 @@ export class VideoGalleryComponente {
         this.showVideo = true;
     }
 
+    constructor(
+        private readonly gamificationService: GamificationService,
+    ) { }
+
     handlePrevious(): void {
         if (this.currentVideoIndex > 0) {
             this.showVideo = false;
@@ -32,6 +37,10 @@ export class VideoGalleryComponente {
             this.showVideo = false;
             this.currentVideoIndex++;
             setTimeout(() => this.showVideo = true, 100);
+
+            if (this.currentVideoIndex === this.videosArray.length - 1) {
+                this.gamificationService.checkPoint({ moduleId: ModuleId.Confecao, value: 'makingDone' });
+            }
         }
     }
 }

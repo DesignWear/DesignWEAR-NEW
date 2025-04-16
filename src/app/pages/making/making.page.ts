@@ -42,10 +42,6 @@ export class MakingPage {
         { key: '3.2.2', values: [9, 10, 3, 4, 5, 6, 7, 14] },
     ]
 
-    constructor(
-        private gamificationService: GamificationService,
-    ) { }
-
     handleSelectChange(ev: any): void {
         this.showGallery = false;
         const sequence = this.sequences.find(sequence => sequence.key === `${this.select1Id}.${this.select2Id}.${this.select3Id}`);
@@ -53,8 +49,6 @@ export class MakingPage {
         if (!sequence) {
             return;
         }
-
-        this.gamificationService.checkPoint({ moduleId: ModuleId.Confecao, value: 'makingDone' });
 
         setTimeout(() => {
             this.videos = sequence.values.map((item) => `imgs/making/COSTURA_${item}.mp4`);

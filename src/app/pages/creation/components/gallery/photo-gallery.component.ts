@@ -30,6 +30,10 @@ export class PhotoGalleryComponent implements OnInit {
     return this.photos[this.currentIndex];
   }
 
+  displayCountingNavigator(): string {
+    return `${this.currentIndex + 1} / ${this.photos.length}`;
+  }
+
   previous(): void {
     if (this.currentIndex > 0) {
       this.currentIndex--;

@@ -36,7 +36,6 @@ export class TopMenuComponent {
         return SITEMAP;
     }
 
-
     onTouch() {
         const agora = new Date().getTime();
 
@@ -63,6 +62,7 @@ export class TopMenuComponent {
     onFiveTaps() {
         if (confirm('Apagar localStorage?') == true) {
             localStorage.clear();
+            location.reload();
         }
     }
 }

@@ -24,7 +24,7 @@
 
 .numeric-input-mobile {
     width: 90%;
-    height: 32px; // Larger touch target for mobile
+    height: 24px; // Larger touch target for mobile
     padding: 0.5rem;
     font-size: 16px; // Prevents iOS zoom on focus
     border: 1px solid #ddd;
@@ -36,26 +36,26 @@
     appearance: none;
     box-shadow: none;
     outline: none;
-    
+
     // Remove spinner buttons for number inputs
     &::-webkit-outer-spin-button,
     &::-webkit-inner-spin-button {
         -webkit-appearance: none;
         margin: 0;
     }
-    
+
     // Active state styling
     &:focus {
         border-color: var(--primary-color);
         box-shadow: 0 0 0 2px rgba(162, 51, 218, 0.2); // Using primary color from the codebase
     }
-    
+
     // Placeholder styling
     &::placeholder {
         color: #999;
         opacity: 0.8;
     }
-    
+
     // Disabled state
     &:disabled {
         background-color: #f5f5f5;
@@ -82,4 +82,32 @@ img {
             background-color: rgb(220, 220, 255);
         }
     }
+}
+
+
+table {
+    width: 100vw;
+    border-collapse: collapse;
+    background-color: white;
+    font-size: small;
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 3px 1px;
+    text-align: center;
+}
+
+thead {
+    background-color: #e0e0e0;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 1px;
+    text-align: center;
+    background-color: #e6f4ff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }

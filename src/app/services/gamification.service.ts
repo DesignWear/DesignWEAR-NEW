@@ -137,6 +137,7 @@ export class GamificationService {
 
     checkpointAudio(): void {
         const audio = new Audio('sounds/chockpoint.mp3');
+        audio.volume = 0.1;
         audio.play();
     }
 

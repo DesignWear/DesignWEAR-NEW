@@ -9,7 +9,79 @@
     </a>
 </div>
 
-@for (field of fields; track field) {
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>TAM 10</th>
+            <th>TAM 12</th>
+            <th>TAM 14</th>
+            <th>Medidas Desejadas</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Peito</td>
+            <td>84cm</td>
+            <td>88cm</td>
+            <td>92cm</td>
+            <td><input type="number" class="numeric-input-mobile" inputmode="numeric" pattern="[0-9]*" (input)="handleChance(1, $event)"></td>
+        </tr>
+        <tr>
+            <td>Cintura</td>
+            <td>68cm</td>
+            <td>72cm</td>
+            <td>76cm</td>
+            <td><input type="number" class="numeric-input-mobile" inputmode="numeric" pattern="[0-9]*" (input)="handleChance(2, $event)"></td>
+        </tr>
+        <tr>
+            <td>Anca</td>
+            <td>92cm</td>
+            <td>96cm</td>
+            <td>100cm</td>
+            <td><input type="number" class="numeric-input-mobile" inputmode="numeric" pattern="[0-9]*" (input)="handleChance(3, $event)"></td>
+        </tr>
+        <tr>
+            <td>Folga para Anca</td>
+            <td>2 a 4cm</td>
+            <td>2 a 4cm</td>
+            <td>2 a 4cm</td>
+            <td><input type="number" class="numeric-input-mobile" inputmode="numeric" pattern="[0-9]*" (input)="handleChance(4, $event)"></td>
+          </tr>
+        <tr>
+            <td>Folga para Cintura</td>
+            <td>1cm</td>
+            <td>1cm</td>
+            <td>1cm</td>
+            <td><input type="number" class="numeric-input-mobile" inputmode="numeric" pattern="[0-9]*" (input)="handleChance(5, $event)"></td>
+        </tr>
+        <tr>
+            <td>Cintura até Anca</td>
+            <td>20,3cm</td>
+            <td>20,6cm</td>
+            <td>20,9cm</td>
+            <td><input type="number" class="numeric-input-mobile" inputmode="numeric" pattern="[0-9]*" (input)="handleChance(6, $event)"></td>
+        </tr>
+        <tr>
+            <td>Cintura até Joelho</td>
+            <td>58cm</td>
+            <td>58,5cm</td>
+            <td>59cm</td>
+            <td><input type="number" class="numeric-input-mobile" inputmode="numeric" pattern="[0-9]*" (input)="handleChance(7, $event)"></td>
+        </tr>
+        <tr>
+            <td>Comprimento da Saia Base</td>
+            <td>45cm</td>
+            <td>46cm</td>
+            <td>47cm</td>
+            <td><input type="number" class="numeric-input-mobile" inputmode="numeric" pattern="[0-9]*" (input)="handleChance(8, $event)"></td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+
+<!-- @for (field of fields; track field) {
     <div class="input-field">
         <div class="input-name">{{ field.name }}</div>
         <div class="input-measures">tam. 10: <b>{{ field.tam10 }}</b> | tam. 12: <b>{{ field.tam12 }}</b> | tam. 14: <b>{{ field.tam14 }}</b></div>
@@ -21,7 +93,7 @@
             pattern="[0-9]*"
             (input)="handleChance(field.id, $event)">
     </div>
-}
+} -->
 
 <img src="imgs/slides/7/passo7.svg">
 
@@ -30,8 +102,10 @@
         <b>Passo 1 </b>
         <span> - Fazer um retângulo:</span>
     </div>
-    <div class="step-row">1-2 e 3-4: Largura = Anca ÷ 2 + Folga da Anca ÷ 2 = <span>{{ formatNumber(anca) }}</span> ÷ 2 + <span>{{ formatNumber(folgaAnca) }}</span> ÷ 2 = <span>{{ formatNumber(larguraRetangulo) }}cm</span></div>
-    <div class="step-row">1-3 e 2-4: Altura = Comprimento da Saia Base = <span>{{ formatNumber(saiaBase) }}cm</span></div>
+    <div class="step-row">1-2 e 3-4: Largura = Anca ÷ 2 + Folga da Anca ÷ 2 = <span>{{ formatNumber(anca) }}</span> ÷ 2
+        + <span>{{ formatNumber(folgaAnca) }}</span> ÷ 2 = <span>{{ formatNumber(larguraRetangulo) }}cm</span></div>
+    <div class="step-row">1-3 e 2-4: Altura = Comprimento da Saia Base = <span>{{ formatNumber(saiaBase) }}cm</span>
+    </div>
 </div>
 
 <div class="step-content">
@@ -56,7 +130,9 @@
         <span> - Lateral da Anca:</span>
     </div>
     <div class="step-row">7-8 = subir 2cm (sugestão)</div>
-    <div class="step-row">Cintura das Costas e da Frente: 1-9 e 2-10: Cintura ÷ 4 + 3cm (pinça) + Folga da Cintura ÷ 4 = <span>{{ formatNumber(cintura) }}</span> ÷ 4 + 3cm (pinça) + <span>{{ formatNumber(folgaCintura) }}</span> ÷ 4 = <span>{{ formatNumber(cinturaCalculada) }}cm</span></div>
+    <div class="step-row">Cintura das Costas e da Frente: 1-9 e 2-10: Cintura ÷ 4 + 3cm (pinça) + Folga da Cintura ÷ 4 =
+        <span>{{ formatNumber(cintura) }}</span> ÷ 4 + 3cm (pinça) + <span>{{ formatNumber(folgaCintura) }}</span> ÷ 4 =
+        <span>{{ formatNumber(cinturaCalculada) }}cm</span></div>
     <div class="step-row">Traçar linha da Anca com curva suave</div>
 </div>
 
@@ -65,7 +141,8 @@
         <b>Passo 5 </b>
         <span> - Pinças:</span>
     </div>
-    <div class="step-row">1-11 e 2-12 = Meio da Pinça (Peito ÷ 10 + 1cm) = <span>{{ formatNumber(peito) }}</span> ÷ 10 + 1cm = <span>{{ formatNumber(pincaMeio) }}cm</span></div>
+    <div class="step-row">1-11 e 2-12 = Meio da Pinça (Peito ÷ 10 + 1cm) = <span>{{ formatNumber(peito) }}</span> ÷ 10 +
+        1cm = <span>{{ formatNumber(pincaMeio) }}cm</span></div>
     <div class="step-row">Sair 1,5cm para cada lado do Meio da Pinça</div>
     <div class="step-row">Pinça Costas: descer 14cm</div>
     <div class="step-row">Pinça Frente: descer 12cm</div>

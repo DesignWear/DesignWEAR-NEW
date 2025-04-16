@@ -32,10 +32,11 @@
 
 @if (showAudioPlayer) {
     <div class="audioPlayer">
-        <audio controls>
+        <audio [src]="currentSlide.audioUrl" controls></audio>
+        <!-- <audio controls>
             <source [src]="currentSlide.audioUrl" type="audio/mpeg">
             Your browser does not support the audio element.
-        </audio>
+        </audio> -->
     </div>
 }
 

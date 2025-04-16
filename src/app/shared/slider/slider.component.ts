@@ -70,7 +70,7 @@ Cint÷4 + 3 (pinça) + Folga Cint÷4 (20,25cm)`,
             slideUrl: '/imgs/slides/5/passo5.svg',
             audioUrl: '/imgs/slides/5/passo5.mp3',
             videoUrl: '/imgs/slides/5/passo5.mp4',
-            text: `1→11 e 1→12 = Peito÷10 + 1cm (9,4cm)
+            text: `1→11 e 2→12 = Peito÷10 + 1cm (9,4cm)
                     
 Marcar 1,5cm para cada lado
 
