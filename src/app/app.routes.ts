@@ -20,6 +20,9 @@ import { ModelingMoldes2Page } from './pages/modeling/modeling-models-2/modeling
 import { SaiasPage } from './pages/creation/saias/saias.page';
 import { SlidesPage } from './pages/base/slides/slides.page';
 import { CalculatorPage } from './pages/base/calculator/calculator.page';
+import { VideoSequencesPage } from './pages/making/video-sequences/video-sequences.page';
+import { ArPage } from './pages/making/ar/ar.page';
+import { ArVideoPage } from './pages/making/ar-video/ar-video.page';
 
 export const routes: Routes = [
     { path: '', component: SplashPage },
@@ -63,7 +66,16 @@ export const routes: Routes = [
                 ],
             },
             { path: 'cutting', component: CuttingPage },
-            { path: 'making', component: MakingPage },
+            {
+                path: 'making',
+                component: MakingPage,
+                children: [
+                    { path: 'sequences', component: VideoSequencesPage },
+                    { path: 'ar', component: ArPage },
+                    { path: 'ar-video', component: ArVideoPage },
+                    { path: '', redirectTo: 'sequences', pathMatch: 'full' },
+                ]
+            },
         ],
     },
     { path: '**', redirectTo: 'app/home' },

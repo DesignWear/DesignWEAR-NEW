@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ComparatorArComponent } from "../comparator-ar/comparator-ar.component";
-import { GltfViewerComponent } from "../gltf-viewer/gltf-viewer.component";
+// import { GltfViewerComponent } from "../gltf-viewer/gltf-viewer.component";
 import { Router } from "@angular/router";
 import { GamificationService, ModuleId } from "../../services/gamification.service";
 
@@ -27,7 +27,7 @@ export type Slide = {
     selector: 'app-slider-component',
     templateUrl: './slider.component.html',
     styleUrl: './slider.component.scss',
-    imports: [ComparatorArComponent, GltfViewerComponent],
+    imports: [ComparatorArComponent/*, GltfViewerComponent*/],
     standalone: true,
 })
 export class SliderComponent implements OnInit {
