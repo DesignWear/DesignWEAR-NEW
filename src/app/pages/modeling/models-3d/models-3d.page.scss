@@ -1,0 +1,48 @@
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.image-link {
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.3s ease;
+    width: calc(20% - 20px); /* 5 imagens com espaçamento */
+    min-width: 120px; /* Largura mínima para mobile */
+}
+
+.image-link:hover {
+    transform: scale(1.05);
+}
+
+.image-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 250px; /* Altura fixa para as imagens */
+    display: flex;
+    flex-direction: column;
+}
+
+.image-card img {
+    width: 100%;
+    height: 120%; /* A imagem ocupa 80% do card */
+    object-fit: cover;
+    object-position: center;
+}
+
+.image-title {
+    padding: 15px;
+    font-weight: bold;
+    text-align: center;
+    height: 20%; /* O título ocupa 20% do card */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}

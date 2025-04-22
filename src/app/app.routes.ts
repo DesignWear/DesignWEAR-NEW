@@ -23,6 +23,8 @@ import { CalculatorPage } from './pages/base/calculator/calculator.page';
 import { VideoSequencesPage } from './pages/making/video-sequences/video-sequences.page';
 import { ArPage } from './pages/making/ar/ar.page';
 import { ArVideoPage } from './pages/making/ar-video/ar-video.page';
+import { Models3dPage } from './pages/modeling/models-3d/models-3d.page';
+import { ModelViewPage } from './pages/modeling/models-3d/model-view/model-view.page';
 
 export const routes: Routes = [
     { path: '', component: SplashPage },
@@ -54,6 +56,8 @@ export const routes: Routes = [
                 component: ModelingPage,
                 children: [
                     { path: 'menu', component: ModelingMenuPage },
+                    { path: 'models-3d', component: Models3dPage },
+                    { path: 'model-view', component: ModelViewPage, },
                     { path: 'comprimento', component: ModelingComprimentoPage },
                     { path: 'recorte', component: ModelingRecortePage },
                     { path: 'amplitude-1', component: ModelingAmplitude1Page },

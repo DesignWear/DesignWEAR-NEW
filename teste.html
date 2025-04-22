@@ -1,117 +1,83 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.0.0/dist/aframe-extras.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
-	<script>
-		document.addEventListener("DOMContentLoaded", function () {
-			const examplePlane1 = document.querySelector('#image-1');
-			examplePlane1.addEventListener("click", (_) => {
-				console.log("plane 1 click");
-			});
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Cobrinha</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f7f7f7;
+        }
 
-			const examplePlane2 = document.querySelector('#image-2');
-			examplePlane2.addEventListener("click", (_) => {
-				console.log("plane 2 click");
-			});
+        .game-container {
+            width: 600px;
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background-color: #333;
+        }
 
-			const examplePlane3 = document.querySelector('#image-3');
-			examplePlane3.addEventListener("click", (_) => {
-				console.log("plane 3 click");
-			});
+        #snake {
+            width: 10px;
+            height: 10px;
+            background-color: green;
+            position: absolute;
+        }
 
-			const examplePlane4 = document.querySelector('#image-4');
-			examplePlane4.addEventListener("click", (_) => {
-				console.log("plane 4 click");
-			});
-
-			const examplePlane5 = document.querySelector('#image-5');
-			examplePlane5.addEventListener("click", (_) => {
-				console.log("plane 5 click");
-			});
-
-			const examplePlane6 = document.querySelector('#image-6');
-			examplePlane6.addEventListener("click", (_) => {
-				console.log("plane 6 click");
-			});
-
-			const examplePlane7 = document.querySelector('#image-7');
-			examplePlane7.addEventListener("click", (_) => {
-				console.log("plane 7 click");
-			});
-
-			const examplePlane8 = document.querySelector('#image-8');
-			examplePlane8.addEventListener("click", (_) => {
-				console.log("plane 8 click");
-			});
-
-			const examplePlane9 = document.querySelector('#image-9');
-			examplePlane9.addEventListener("click", (_) => {
-				console.log("plane 9 click");
-			});
-		});
-			
-	</script>
+        #food {
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
 </head>
-
 <body>
-	<a-scene id="my-scene" mindar-image="imageTargetSrc: /imgs/ar/hack_x.mind;" embedded color-space="sRGB"
-		renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false"
-		device-orientation-permission-ui="enabled: false">
+    <div class="game-container">
+        <div id="snake"></div>
+        <div id="food"></div>
+    </div>
+    <script>
+        const snake = document.getElementById('snake');
+        let snakeX = 0;
+        let snakeY = 0;
 
-		<a-assets>
-			<img id="hack-1" src="/imgs/ar/hack_1.png">
-			<img id="hack-2" src="/imgs/ar/hack_2.png">
-			<img id="hack-3" src="/imgs/ar/hack_3.png">
-			<img id="hack-4" src="/imgs/ar/hack_4.png">
-			<img id="hack-5" src="/imgs/ar/hack_5.png">
-			<img id="hack-6" src="/imgs/ar/hack_6.png">
-			<img id="hack-7" src="/imgs/ar/hack_7.png">
-			<img id="hack-8" src="/imgs/ar/hack_8.png">
-			<img id="hack-9" src="/imgs/ar/hack_9.png">
-		</a-assets>
+        const food = document.getElementById('food');
+        let foodX = Math.floor(Math.random() * 60) * 10;
+        let foodY = Math.floor(Math.random() * 60) * 10;
 
-		<a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;"
-			raycaster="near: 10; far: 10000; objects: .clickable"></a-camera>
+        document.addEventListener('keydown', function (e) {
+            switch (e.key) {
+                case 'ArrowUp':
+                    snakeY -= 10;
+                    break;
+                case 'ArrowDown':
+                    snakeY += 10;
+                    break;
+                case 'ArrowLeft':
+                    snakeX -= 10;
+                    break;
+                case 'ArrowRight':
+                    snakeX += 10;
+                    break;
+            }
+            snake.style.left = `${snakeX}px`;
+            snake.style.top = `${snakeY}px`;
+        });
 
-		<a-entity mindar-image-target="targetIndex: 0">
-			<a-image id="image-1" class="clickable" position="0 0 0" height="1" width="1" src="#hack-1"></a-image>
-		</a-entity>
-
-		<a-entity mindar-image-target="targetIndex: 1">
-			<a-image id="image-2" class="clickable" position="0 0 0" height="1" width="1" src="#hack-2"></a-image>
-		</a-entity>
-
-		<a-entity mindar-image-target="targetIndex: 2">
-			<a-image id="image-3" class="clickable" position="0 0 0" height="1" width="1" src="#hack-3"></a-image>
-		</a-entity>
-
-		<a-entity mindar-image-target="targetIndex: 3">
-			<a-image id="image-4" class="clickable" position="0 0 0" height="1" width="1" src="#hack-4"></a-image>
-		</a-entity>
-
-		<a-entity mindar-image-target="targetIndex: 4">
-			<a-image id="image-5" class="clickable" position="0 0 0" height="1" width="1" src="#hack-5"></a-image>
-		</a-entity>
-
-		<a-entity mindar-image-target="targetIndex: 5">
-			<a-image id="image-6" class="clickable" position="0 0 0" height="1" width="1" src="#hack-6"></a-image>
-		</a-entity>
-
-		<a-entity mindar-image-target="targetIndex: 6">
-			<a-image id="image-7" class="clickable" position="0 0 0" height="1" width="1" src="#hack-7"></a-image>
-		</a-entity>
-
-		<a-entity mindar-image-target="targetIndex: 7">
-			<a-image id="image-8" class="clickable" position="0 0 0" height="1" width="1" src="#hack-8"></a-image>
-		</a-entity>
-
-		<a-entity mindar-image-target="targetIndex: 8">
-			<a-image id="image-9" class="clickable" position="0 0 0" height="1" width="1" src="#hack-9"></a-image>
-		</a-entity>
-	</a-scene>
+        setInterval(() => {
+            if (snakeX === foodX && snakeY === foodY) {
+                foodX = Math.floor(Math.random() * 60) * 10;
+                foodY = Math.floor(Math.random() * 60) * 10;
+            }
+        }, 250);
+    </script>
 </body>
-
 </html>

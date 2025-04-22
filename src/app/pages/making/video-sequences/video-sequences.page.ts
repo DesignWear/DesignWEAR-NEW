@@ -37,8 +37,8 @@ export class VideoSequencesPage {
         { key: '1.2.1', values: [1, 2, 3, 4, 5, 6, 7, 8] },
         { key: '1.2.2', values: [1, 2, 3, 4, 5, 6, 7, 14] },
 
-        { key: '2.1.1', values: [1, 2, 3, 4, 5, 6, 7, 14] },
-        { key: '2.1.2', values: [2, 11, 12, 13, 8] },
+        { key: '2.1.1', values: [2, 11, 12, 13, 8] },
+        { key: '2.1.2', values: [2, 11, 12, 13, 14] },
         { key: '2.2.1', values: [2, 3, 4, 5, 6, 7, 8] },
         { key: '2.2.2', values: [2, 3, 4, 5, 6, 7, 14] },
 
@@ -48,7 +48,7 @@ export class VideoSequencesPage {
         { key: '3.2.2', values: [9, 10, 3, 4, 5, 6, 7, 14] },
     ]
 
-    handleSelectChange(ev: any): void {
+    handleSelectChange(_: any): void {
         this.showGallery = false;
         const sequence = this.sequences.find(sequence => sequence.key === `${this.select1Id}.${this.select2Id}.${this.select3Id}`);
 
