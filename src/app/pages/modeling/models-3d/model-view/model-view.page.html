@@ -1,2 +1,24 @@
 <app-page-header title="Avatar 3D" module="3" subtitle=""></app-page-header>
-<div>{{ model }}</div>
+<div class="card">
+    <model-viewer
+        [src]="'/3d/model_' + model + '.glb'"
+        [ios-src]="'/3d/model_' + model + '.usdz'"
+        [poster]="'/3d/thumbs/model_' + model + '.png'"
+        alt="A 3D model of an astronaut"
+        shadow-intensity="1"
+        camera-controls
+        auto-rotate
+        ar
+        ar-status="not-presenting"
+        ar-modes="quick-look scene-viewer webxr"
+        environment-image="neutral"
+        quick-look-browsers="safari chrome"
+        loading="eager"
+        reveal="auto">
+    </model-viewer>
+</div>
+<div class="buttons">
+    <div class="modeling-btn2" routerLink="/app/modeling/models-3d">
+        <div>Voltar</div>
+    </div>
+</div>

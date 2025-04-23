@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from "@angular/core";
+import { Component, CUSTOM_ELEMENTS_SCHEMA, OnDestroy, OnInit } from "@angular/core";
 import { DomSanitizer, SafeHtml } from "@angular/platform-browser";
 import { Router } from "@angular/router";
 
@@ -10,7 +10,7 @@ import { Router } from "@angular/router";
     standalone: true,
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class ArPage implements OnInit {
+export class ArPage implements OnInit, OnDestroy {
     arHtml!: SafeHtml;
 
     constructor(
@@ -163,6 +163,14 @@ export class ArPage implements OnInit {
                 },
             });
         });
+    }
+
+    ngOnDestroy(): void {
+        this.arHtml = '';
+        const elements = document.querySelectorAll('.mindar-ui-overlay');
+        for (let i = 0; i < elements.length; i++) {
+            elements[i].remove();
+        }
     }
 
     onClose(): void {

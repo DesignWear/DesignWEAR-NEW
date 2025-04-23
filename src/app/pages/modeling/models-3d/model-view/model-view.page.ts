@@ -1,12 +1,12 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from "@angular/core";
 import { PageHeaderComponent } from "../../../../shared/page-header/page-header.component";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, RouterLink } from "@angular/router";
 
 @Component({
     selector: 'app-model-view-page',
     templateUrl: './model-view.page.html',
     styleUrl: './model-view.page.scss',
-    imports: [PageHeaderComponent],
+    imports: [PageHeaderComponent, RouterLink],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
     standalone: true,
 })
