@@ -2,14 +2,14 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="25"
-   height="64"
-   viewBox="0 0 25 64"
+   width="26"
+   height="66"
+   viewBox="0 0 26 66"
    version="1.1"
    id="svg1"
    xml:space="preserve"
-   sodipodi:docname="down_arrow.svg"
    inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   sodipodi:docname="down_arrow.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -23,23 +23,23 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
      inkscape:document-units="px"
-     inkscape:zoom="11.464789"
-     inkscape:cx="-1.3955774"
-     inkscape:cy="32.011056"
+     inkscape:zoom="11.991352"
+     inkscape:cx="7.1718349"
+     inkscape:cy="33.857732"
      inkscape:window-width="2560"
      inkscape:window-height="1009"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" /><defs
+     inkscape:current-layer="layer1-8" /><defs
      id="defs1" /><g
      inkscape:label="Camada 1"
      inkscape:groupmode="layer"
-     id="layer1"><path
-       id="rect1"
-       style="fill:none;stroke:#000000;stroke-width:1.21332;stroke-linecap:round;stroke-dasharray:none"
-       d="M 23.903648,51.350519 12.603808,62.650359 1.3039685,51.350519"
-       sodipodi:nodetypes="ccc" /><path
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-dasharray:none"
-       d="M 12.560196,62.277641 V 0.87223587"
-       id="path1" /></g></svg>
+     id="layer1"><g
+       inkscape:label="Camada 1"
+       id="layer1-8"
+       transform="translate(0.1960315,0.62776413)"
+       style="stroke-width:3"><path
+         id="rect1"
+         style="stroke-linecap:round"
+         d="m 12.810008,-0.37758384 c -0.828427,0 -1.5,0.67157288 -1.5,1.50000004 V 59.235697 L 2.6146957,50.538431 a 1.5,1.5 0 0 0 -1.0605469,-0.439453 1.5,1.5 0 0 0 -1.06054688,0.439453 1.5,1.5 0 0 0 0,2.123047 L 12.852977,65.020853 25.214305,52.661478 a 1.5,1.5 0 0 0 0,-2.123047 1.5,1.5 0 0 0 -2.121094,0 l -8.783203,8.783204 V 1.1224162 c 0,-0.82842716 -0.671573,-1.50000004 -1.5,-1.50000004 z" /></g></g></svg>

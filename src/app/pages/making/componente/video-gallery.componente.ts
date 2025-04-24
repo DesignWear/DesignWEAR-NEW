@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, Input } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { GamificationService, ModuleId } from "../../../services/gamification.service";
 
 @Component({
@@ -10,7 +10,7 @@ import { GamificationService, ModuleId } from "../../../services/gamification.se
     standalone: true,
 })
 export class VideoGalleryComponente {
-    currentVideoIndex: number = 0;
+    @Input() currentVideoIndex: number = 0;
     showVideo: boolean = false;
     videosArray: string[] = [];
 
@@ -20,6 +20,8 @@ export class VideoGalleryComponente {
         this.showVideo = true;
     }
 
+    @Output() currentVideoIndexChange = new EventEmitter<number>();
+
     constructor(
         private readonly gamificationService: GamificationService,
     ) { }
@@ -28,6 +30,7 @@ export class VideoGalleryComponente {
         if (this.currentVideoIndex > 0) {
             this.showVideo = false;
             this.currentVideoIndex--;
+            this.currentVideoIndexChange.emit(this.currentVideoIndex);
             setTimeout(() => this.showVideo = true, 100);
         }
     }
@@ -36,11 +39,16 @@ export class VideoGalleryComponente {
         if (this.currentVideoIndex < this.videosArray.length - 1) {
             this.showVideo = false;
             this.currentVideoIndex++;
+            this.currentVideoIndexChange.emit(this.currentVideoIndex);
             setTimeout(() => this.showVideo = true, 100);
 
             if (this.currentVideoIndex === this.videosArray.length - 1) {
                 this.gamificationService.checkPoint({ moduleId: ModuleId.Confecao, value: 'makingDone' });
             }
         }
+    }
+
+    displayCurrentVideo(): string {
+        return `${this.currentVideoIndex + 1} / ${this.videosArray.length}`;
     }
 }

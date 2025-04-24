@@ -30,6 +30,7 @@ export class VideoSequencesPage {
     select1Id?: string = '0';
     select2Id?: string = '0';
     select3Id?: string = '0';
+    currentVideoIndex: number = 0;
 
     sequences: Sequence[] = [
         { key: '1.1.1', values: [1, 2, 11, 12, 13, 8] },
@@ -48,7 +49,40 @@ export class VideoSequencesPage {
         { key: '3.2.2', values: [9, 10, 3, 4, 5, 6, 7, 14] },
     ]
 
-    handleSelectChange(_: any): void {
+    constructor() {
+        const result = localStorage.getItem('DesignWear:videoSequencesState');
+        if (result) {
+            const state = JSON.parse(result);
+            this.select1Id = state.select1Id;
+            this.select2Id = state.select2Id;
+            this.select3Id = state.select3Id;
+            this.currentVideoIndex = state.currentVideoIndex;
+        } else {
+            localStorage.setItem('DesignWear:videoSequencesState', JSON.stringify({
+                select1Id: '0',
+                select2Id: '0',
+                select3Id: '0',
+                currentVideoIndex: 0,
+            }));
+        }
+        this.handleSelectChange();
+    }
+
+    saveState(): void {
+        localStorage.setItem('DesignWear:videoSequencesState', JSON.stringify({
+            select1Id: this.select1Id,
+            select2Id: this.select2Id,
+            select3Id: this.select3Id,
+            currentVideoIndex: this.currentVideoIndex,
+        }));
+    }
+
+    handleChangeVideo(index: number): void {
+        this.currentVideoIndex = index;
+        this.saveState();
+    }
+
+    handleSelectChange(): void {
         this.showGallery = false;
         const sequence = this.sequences.find(sequence => sequence.key === `${this.select1Id}.${this.select2Id}.${this.select3Id}`);
 
@@ -59,6 +93,7 @@ export class VideoSequencesPage {
         setTimeout(() => {
             this.videos = sequence.values.map((item) => `imgs/making/COSTURA_${item}.mp4`);
             this.showGallery = true;
+            this.saveState();
         }, 100);
     }
 }
