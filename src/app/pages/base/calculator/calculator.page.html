@@ -25,75 +25,61 @@
             <td>84cm</td>
             <td>88cm</td>
             <td>92cm</td>
-            <td><input type="number" class="numeric-input-mobile" inputmode="numeric" pattern="[0-9]*" (input)="handleChance(1, $event)"></td>
+            <td><input type="number" class="numeric-input-mobile" inputmode="numeric" pattern="[0-9]*" [(ngModel)]="peito" (input)="handleChance(1, $event)"></td>
         </tr>
         <tr>
             <td>Cintura</td>
             <td>68cm</td>
             <td>72cm</td>
             <td>76cm</td>
-            <td><input type="number" class="numeric-input-mobile" inputmode="numeric" pattern="[0-9]*" (input)="handleChance(2, $event)"></td>
+            <td><input type="number" class="numeric-input-mobile" inputmode="numeric" pattern="[0-9]*" [(ngModel)]="cintura" (input)="handleChance(2, $event)"></td>
         </tr>
         <tr>
             <td>Anca</td>
             <td>92cm</td>
             <td>96cm</td>
             <td>100cm</td>
-            <td><input type="number" class="numeric-input-mobile" inputmode="numeric" pattern="[0-9]*" (input)="handleChance(3, $event)"></td>
+            <td><input type="number" class="numeric-input-mobile" inputmode="numeric" pattern="[0-9]*" [(ngModel)]="anca" (input)="handleChance(3, $event)"></td>
         </tr>
         <tr>
             <td>Folga para Anca</td>
             <td>2 a 4cm</td>
             <td>2 a 4cm</td>
             <td>2 a 4cm</td>
-            <td><input type="number" class="numeric-input-mobile" inputmode="numeric" pattern="[0-9]*" (input)="handleChance(4, $event)"></td>
+            <td><input type="number" class="numeric-input-mobile" inputmode="numeric" pattern="[0-9]*" [(ngModel)]="folgaAnca" (input)="handleChance(4, $event)"></td>
           </tr>
         <tr>
             <td>Folga para Cintura</td>
             <td>1cm</td>
             <td>1cm</td>
             <td>1cm</td>
-            <td><input type="number" class="numeric-input-mobile" inputmode="numeric" pattern="[0-9]*" (input)="handleChance(5, $event)"></td>
+            <td><input type="number" class="numeric-input-mobile" inputmode="numeric" pattern="[0-9]*" [(ngModel)]="folgaCintura" (input)="handleChance(5, $event)"></td>
         </tr>
         <tr>
             <td>Cintura até Anca</td>
             <td>20,3cm</td>
             <td>20,6cm</td>
             <td>20,9cm</td>
-            <td><input type="number" class="numeric-input-mobile" inputmode="numeric" pattern="[0-9]*" (input)="handleChance(6, $event)"></td>
+            <td><input type="number" class="numeric-input-mobile" inputmode="numeric" pattern="[0-9]*" [(ngModel)]="cinturaAnca" (input)="handleChance(6, $event)"></td>
         </tr>
         <tr>
             <td>Cintura até Joelho</td>
             <td>58cm</td>
             <td>58,5cm</td>
             <td>59cm</td>
-            <td><input type="number" class="numeric-input-mobile" inputmode="numeric" pattern="[0-9]*" (input)="handleChance(7, $event)"></td>
+            <td><input type="number" class="numeric-input-mobile" inputmode="numeric" pattern="[0-9]*" [(ngModel)]="cinturaJoelho" (input)="handleChance(7, $event)"></td>
         </tr>
         <tr>
             <td>Comprimento da Saia Base</td>
             <td>45cm</td>
             <td>46cm</td>
             <td>47cm</td>
-            <td><input type="number" class="numeric-input-mobile" inputmode="numeric" pattern="[0-9]*" (input)="handleChance(8, $event)"></td>
+            <td><input type="number" class="numeric-input-mobile" inputmode="numeric" pattern="[0-9]*" [(ngModel)]="saiaBase" (input)="handleChance(8, $event)"></td>
         </tr>
     </tbody>
 </table>
 
 <br>
-
-<!-- @for (field of fields; track field) {
-    <div class="input-field">
-        <div class="input-name">{{ field.name }}</div>
-        <div class="input-measures">tam. 10: <b>{{ field.tam10 }}</b> | tam. 12: <b>{{ field.tam12 }}</b> | tam. 14: <b>{{ field.tam14 }}</b></div>
-        <input
-            [id]="field.id"
-            type="number"
-            class="numeric-input-mobile"
-            inputmode="numeric"
-            pattern="[0-9]*"
-            (input)="handleChance(field.id, $event)">
-    </div>
-} -->
 
 <img src="imgs/slides/7/passo7.svg">
 

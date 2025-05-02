@@ -1,81 +1,15 @@
 import { Component } from "@angular/core";
+import { FormsModule } from "@angular/forms";
 import { RouterLink } from "@angular/router";
-
-type InputField = {
-    id: number;
-    name: string;
-    tam10: string;
-    tam12: string;
-    tam14: string;
-}
 
 @Component({
     selector: 'app-calculator-page',
     templateUrl: './calculator.page.html',
     styleUrl: './calculator.page.scss',
-    imports: [RouterLink],
+    imports: [RouterLink, FormsModule],
     standalone: true,
 })
 export class CalculatorPage {
-    fields: InputField[] = [
-        {
-            id: 1,
-            name: 'Peito',
-            tam10: '84cm',
-            tam12: '88cm',
-            tam14: '92cm',
-        },
-        {
-            id: 2,
-            name: 'Cintura',
-            tam10: '68cm',
-            tam12: '72cm',
-            tam14: '76cm',
-        },
-        {
-            id: 3,
-            name: 'Anca',
-            tam10: '92cm',
-            tam12: '96cm',
-            tam14: '100cm',
-        },
-        {
-            id: 4,
-            name: 'Folga para Anca',
-            tam10: '2 a 4cm',
-            tam12: '2 a 4cm',
-            tam14: '2 a 4cm',
-        },
-        {
-            id: 5,
-            name: 'Folga para Cintura',
-            tam10: '1cm',
-            tam12: '1cm',
-            tam14: '1cm',
-        },
-        {
-            id: 6,
-            name: 'Cintura até Anca',
-            tam10: '20,3cm',
-            tam12: '20,6cm',
-            tam14: '20,9cm',
-        },
-        {
-            id: 7,
-            name: 'Cintura até Joelho',
-            tam10: '58cm',
-            tam12: '58,5cm',
-            tam14: '59cm',
-        },
-        {
-            id: 8,
-            name: 'Comprimento da Saia Base',
-            tam10: '45cm',
-            tam12: '46cm',
-            tam14: '47cm',
-        }
-    ];
-
     peito: number = 0;
     cintura: number = 0;
     anca: number = 0;
@@ -89,6 +23,58 @@ export class CalculatorPage {
     linhaAnca: number = 0;
     cinturaCalculada: number = 0;
     pincaMeio: number = 0;
+
+    constructor() {
+        const result = localStorage.getItem('DesignWear:calculatorState');
+
+        if (result) {
+            const state = JSON.parse(result);
+            this.peito = state.peito;
+            this.cintura = state.cintura;
+            this.anca = state.anca;
+            this.folgaAnca = state.folgaAnca;
+            this.folgaCintura = state.folgaCintura;
+            this.cinturaAnca = state.cinturaAnca;
+            this.cinturaJoelho = state.cinturaJoelho;
+            this.saiaBase = state.saiaBase;
+            this.larguraRetangulo = state.larguraRetangulo;
+            this.linhaAnca = state.linhaAnca;
+            this.cinturaCalculada = state.cinturaCalculada;
+            this.pincaMeio = state.pincaMeio;
+        } else {
+            localStorage.setItem('DesignWear:calculatorState', JSON.stringify({
+                peito: 0,
+                cintura: 0,
+                anca: 0,
+                folgaAnca: 0,
+                folgaCintura: 0,
+                cinturaAnca: 0,
+                cinturaJoelho: 0,
+                saiaBase: 0,
+                larguraRetangulo: 0,
+                linhaAnca: 0,
+                cinturaCalculada: 0,
+                pincaMeio: 0,
+            }));
+        }
+    }
+
+    saveState(): void {
+        localStorage.setItem('DesignWear:calculatorState', JSON.stringify({
+            peito: this.peito,
+            cintura: this.cintura,
+            anca: this.anca,
+            folgaAnca: this.folgaAnca,
+            folgaCintura: this.folgaCintura,
+            cinturaAnca: this.cinturaAnca,
+            cinturaJoelho: this.cinturaJoelho,
+            saiaBase: this.saiaBase,
+            larguraRetangulo: this.larguraRetangulo,
+            linhaAnca: this.linhaAnca,
+            cinturaCalculada: this.cinturaCalculada,
+            pincaMeio: this.pincaMeio,
+        }));
+    }
 
     calculate(): void {
         this.larguraRetangulo = this.anca / 2 + this.folgaAnca / 2;
@@ -124,5 +110,6 @@ export class CalculatorPage {
         }
 
         this.calculate();
+        this.saveState();
     }
 }
